@@ -1,0 +1,36 @@
+.vercel
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtualenv
+venv/
+env/
+.venv/
+.env
+
+# Node / Next
+node_modules/
+.next/
+out/
+dist/
+build/
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swn
+
+# Local credentials / secrets
+linkedin_cookies.json
+linkedin_storage.json
+*.pem
+*.key
+.env.local
+.env.production

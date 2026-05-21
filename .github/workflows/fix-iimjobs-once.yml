@@ -1,0 +1,37 @@
+name: One-time — fix iimjobs india_hiring
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install -q psycopg2-binary
+      - name: Patch iimjobs + instahyre rows
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          python3 - << 'PYEOF'
+          import os, psycopg2
+          conn = psycopg2.connect(os.environ["DATABASE_URL"])
+          cur = conn.cursor()
+          cur.execute("""
+            UPDATE jobs
+            SET india_hiring   = 'confirmed',
+                review_status  = 'approved',
+                needs_review   = false,
+                updated_at     = NOW()
+            WHERE (job_url LIKE '%iimjobs.com%' OR job_url LIKE '%instahyre.com%')
+              AND india_hiring = 'unknown'
+              AND review_status = 'pending'
+          """)
+          print(f"Updated {cur.rowcount} rows")
+          conn.commit()
+          cur.close()
+          conn.close()
+          PYEOF

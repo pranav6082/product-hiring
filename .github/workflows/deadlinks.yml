@@ -1,0 +1,34 @@
+name: Monitor — Dead-link sweep (every 8 hours)
+
+on:
+  schedule:
+    - cron: "0 */8 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (report only, write nothing)"
+        type: boolean
+        default: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: monitor
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -q -r requirements.txt
+
+      - name: Run dead-link sweep
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: python deadlinks.py ${{ inputs.dry_run && '--dry-run' || '' }}

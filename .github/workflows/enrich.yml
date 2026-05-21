@@ -1,0 +1,48 @@
+name: Enrich — clean job records (daily)
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    inputs:
+      batch:
+        description: "Jobs to enrich this run (default 30; raise to clear a backlog)"
+        type: string
+        default: "30"
+      force:
+        description: "Ignore the per-job cooldown (re-clean already-enriched jobs)"
+        type: boolean
+        default: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: scraper
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -q psycopg2-binary python-dotenv requests parallel-web-tools
+
+      - name: Authenticate Parallel CLI
+        run: |
+          mkdir -p ~/.config/parallel-web-tools
+          printf '{"access_token":"%s"}' "${{ secrets.PARALLEL_ACCESS_TOKEN }}" \
+            > ~/.config/parallel-web-tools/credentials.json
+
+      - name: Run enrichment
+        env:
+          DATABASE_URL:        ${{ secrets.DATABASE_URL }}
+          GEMINI_API_KEY:      ${{ secrets.GEMINI_API_KEY }}
+          FALLBACK_LLM_API_KEY: ${{ secrets.FALLBACK_LLM_API_KEY }}
+          ENRICH_BATCH:        ${{ inputs.batch || '30' }}
+          ENRICH_FORCE:        ${{ inputs.force && '1' || '0' }}
+        run: python enrich.py

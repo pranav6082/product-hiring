@@ -1,0 +1,40 @@
+name: Extract — LLM extraction dry run (manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      sample:
+        description: "How many jobs to sample"
+        type: string
+        default: "20"
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: scraper
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -q psycopg2-binary python-dotenv requests parallel-web-tools
+
+      - name: Authenticate Parallel CLI
+        run: |
+          mkdir -p ~/.config/parallel-web-tools
+          printf '{"access_token":"%s"}' "${{ secrets.PARALLEL_ACCESS_TOKEN }}" \
+            > ~/.config/parallel-web-tools/credentials.json
+
+      - name: Run extraction dry run
+        env:
+          DATABASE_URL:        ${{ secrets.DATABASE_URL }}
+          GEMINI_API_KEY:      ${{ secrets.GEMINI_API_KEY }}
+          FALLBACK_LLM_API_KEY: ${{ secrets.FALLBACK_LLM_API_KEY }}
+        run: python extract_dryrun.py --sample=${{ inputs.sample }}

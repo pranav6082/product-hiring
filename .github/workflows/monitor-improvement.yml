@@ -1,0 +1,49 @@
+name: Monitor — Quality + Improvement (daily 8am IST)
+
+on:
+  schedule:
+    - cron: "30 2 * * *"   # 2:30am UTC = 8:00am IST
+  workflow_dispatch:
+    inputs:
+      skip_advisor:
+        description: "Skip the AI advisor (digest-only run)"
+        type: boolean
+        default: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: monitor
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}   # needed for I4 auto-commit push
+          fetch-depth: 50                  # advisor revert-rail needs recent history
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -q -r requirements.txt
+
+      - name: Configure git for auto-commits (I4 whitelist updates)
+        run: |
+          git config --global user.name  "monitor-bot"
+          git config --global user.email "monitor@pipeline"
+
+      - name: Run quality + improvement checks
+        env:
+          DATABASE_URL:         ${{ secrets.DATABASE_URL }}
+          TELEGRAM_BOT_TOKEN:   ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:     ${{ secrets.TELEGRAM_CHAT_ID }}
+          GH_TOKEN:             ${{ secrets.GH_TOKEN }}
+          GH_REPO:              ${{ github.repository }}
+          BOARD_URL:            https://board-pi-eight.vercel.app
+          GEMINI_API_KEY:       ${{ secrets.GEMINI_API_KEY }}
+          SKIP_AI_ADVISOR:      ${{ inputs.skip_advisor && '1' || '0' }}
+        run: python monitor.py --loop improvement
