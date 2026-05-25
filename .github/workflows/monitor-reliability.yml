@@ -5,6 +5,10 @@ on:
     - cron: "0 */6 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: read
+  actions: write
+
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -28,7 +32,7 @@ jobs:
           DATABASE_URL:         ${{ secrets.DATABASE_URL }}
           TELEGRAM_BOT_TOKEN:   ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID:     ${{ secrets.TELEGRAM_CHAT_ID }}
-          GH_TOKEN:             ${{ secrets.GH_TOKEN }}
+          GH_TOKEN:             ${{ secrets.GITHUB_TOKEN }}
           GH_REPO:              ${{ github.repository }}
           BOARD_URL:            https://board-pi-eight.vercel.app
         run: python monitor.py --loop reliability
