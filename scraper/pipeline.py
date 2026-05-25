@@ -251,6 +251,8 @@ INDIA_OFFICE_COMPANIES = {
     "saviynt",  # auto-added by monitor (confirmed 2x)
 
     "clari",  # auto-added by monitor (confirmed 2x)
+
+    "highlevel",  # auto-added by monitor (confirmed 3x)
     # VC funds with India offices — for EIR roles (v0.4)
     "peak xv", "peak xv partners", "sequoia india",
     "accel india", "accel",
