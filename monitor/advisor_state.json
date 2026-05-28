@@ -1,1 +1,19 @@
-{}
+{
+  "last_change": {
+    "ts": "2026-05-28T06:36:41Z",
+    "commits": [
+      "243b78f6d48d11c53c3aac4a2d83248096bcf1f8",
+      "34b59feec54a75c8c4cac76d23668dfc7b15b336"
+    ],
+    "metric": {
+      "quality_passed": 20,
+      "pm_current": 91,
+      "fo_current": 18
+    },
+    "descriptions": [
+      "Refine the iimjobs company extraction logic to be less aggressive in stripping suffixes that might be part of a valid company name, especially for FO/CoS roles, and ensure it doesn't return 'Unknown' if a reasonable company slug is present.",
+      "Remove 'chief of staff' and 'entrepreneur in residence' from `DIRTY_COMPANY_PATTERNS` as they can legitimately appear in company names (e.g., 'Chief of Staff Collective') or be part of a valid company context, preventing unnecessary 'dirty' flags and re-enrichment.",
+      "config: add_queries"
+    ]
+  }
+}
