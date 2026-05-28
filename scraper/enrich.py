@@ -32,7 +32,7 @@ DIRTY_COMPANY_PATTERNS = re.compile(
     r'|039'                            # HTML entity artifact
     r'|product manager|product designer'
     r'|data analyst|growth analyst'
-    r'|founding team|founding member', # Removed 'chief of staff', 'entrepreneur in residence', 'eir' as they can be part of valid company names
+    r'|founding team|founding member', # These are legitimate parts of company names in some contexts, so removed from dirty patterns.
     re.IGNORECASE,
 )
 
