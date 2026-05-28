@@ -942,11 +942,13 @@ def _extract_company_from_search_result(result_title: str, url: str) -> str:
             company_slug = re.sub(r'-(iim|isb|mdi|fms|nit|bits|xlri|iit).*$', '', company_slug)
             company_slug = re.sub(r'-[0-9]+(-[0-9]+)*$', '', company_slug)
             company_slug = company_slug.strip("-")
-            # Reject if too short (< 4 chars), starts with role keyword, or all-caps abbreviation
+            # Reject if too short (< 2 chars), starts with role keyword, or all-caps abbreviation
             if (company_slug and len(company_slug) >= 2
                 and not any(company_slug == kw for kw in role_kws)): # Ensure company slug is not a full role keyword
                 return company_slug.replace("-", " ").title()
-            # No usable company prefix — return Unknown rather than a job-title fragment
+            # If a company slug was extracted, even if short, prefer it over 'Unknown' if it's not a role keyword.
+            if company_slug and not any(company_slug == kw for kw in role_kws):
+                return company_slug.replace("-", " ").title()
             return "Unknown"
 
         # instahyre: instahyre.com/jobs/{company}/{role-slug}
