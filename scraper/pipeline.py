@@ -50,6 +50,9 @@ TITLE_DOMAINS = {
         "entrepreneur in residence", "eir", " eir ",
         "head of special projects", "special projects lead", "special projects manager",
         "strategic initiatives",   # startup-context guard applied at enrich step
+        "business associate", "special assistant", "executive assistant to ceo",
+        "chief of staff to ceo", "chief of staff to founder",
+        "strategy & operations", "strategy and operations",
     ],
 }
 
