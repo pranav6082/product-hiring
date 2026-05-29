@@ -1,18 +1,20 @@
 {
   "last_change": {
-    "ts": "2026-05-28T06:36:41Z",
+    "ts": "2026-05-29T06:37:30Z",
     "commits": [
-      "243b78f6d48d11c53c3aac4a2d83248096bcf1f8",
-      "34b59feec54a75c8c4cac76d23668dfc7b15b336"
+      "e4f26e7c3ac8cfecc18b4ebec2afb4678d8c35c9",
+      "fca377df3035cb7fc1d2438703503a1b77735850",
+      "6152818296b450d92111cdcb14e66fd2bdef6f1c"
     ],
     "metric": {
-      "quality_passed": 20,
-      "pm_current": 91,
+      "quality_passed": 19,
+      "pm_current": 34,
       "fo_current": 18
     },
     "descriptions": [
-      "Refine the iimjobs company extraction logic to be less aggressive in stripping suffixes that might be part of a valid company name, especially for FO/CoS roles, and ensure it doesn't return 'Unknown' if a reasonable company slug is present.",
-      "Remove 'chief of staff' and 'entrepreneur in residence' from `DIRTY_COMPANY_PATTERNS` as they can legitimately appear in company names (e.g., 'Chief of Staff Collective') or be part of a valid company context, preventing unnecessary 'dirty' flags and re-enrichment.",
+      "Relax the iimjobs company extraction logic to be less aggressive in stripping potential company names that might resemble role keywords, especially for FO/CoS roles. This ensures more accurate company names are extracted from iimjobs URLs, which are a significant source for Indian roles.",
+      "Expand the 'strategy' domain keywords to include more common variations for Founder's Office and Chief of Staff roles, as per SPEC.md v0.4, to increase ingestion of relevant jobs. This directly addresses the low FO/CoS board count.",
+      "Remove 'founding team' and 'founding member' from `DIRTY_COMPANY_PATTERNS`. These are legitimate descriptors for early-stage companies or roles within a company, especially for Founder's Office roles, and should not cause a company name to be flagged as dirty.",
       "config: add_queries"
     ]
   }
