@@ -943,12 +943,12 @@ def _extract_company_from_search_result(result_title: str, url: str) -> str:
             company_slug = re.sub(r'-[0-9]+(-[0-9]+)*$', '', company_slug)
             company_slug = company_slug.strip("-")
             # Reject if too short (< 2 chars), starts with role keyword, or all-caps abbreviation
-            if (company_slug and len(company_slug) >= 2
-                and not any(company_slug == kw for kw in role_kws)): # Ensure company slug is not a full role keyword
-                return company_slug.replace("-", " ").title()
-            # If a company slug was extracted, even if short, prefer it over 'Unknown' if it's not a role keyword.
-            if company_slug and not any(company_slug == kw for kw in role_kws):
-                return company_slug.replace("-", " ").title()
+            if company_slug and len(company_slug) >= 2:
+                # Allow company slugs that might contain role keywords if they are not *just* the keyword
+                # and are not in the JUNK_COMPANY_NAMES list.
+                cleaned_company = company_slug.replace("-", " ").title()
+                if cleaned_company.lower() not in JUNK_COMPANY_NAMES:
+                    return cleaned_company
             return "Unknown"
 
         # instahyre: instahyre.com/jobs/{company}/{role-slug}
