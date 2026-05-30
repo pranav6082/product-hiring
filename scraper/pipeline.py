@@ -32,6 +32,10 @@ TITLE_DOMAINS = {
         "associate product manager", "associate pm", "senior product manager", "sr product manager",
         "sr. product manager", "lead pm", "principal pm", "staff pm", "group pm",
         "founding product manager", "founding pm",
+        "product owner", "technical product manager", "tpm", "product lead",
+        "product director", "product head", "product management", "product strategy",
+        "growth product manager", "platform product manager", "ai product manager",
+        "product evangelist", "product specialist",
     ],
     "design": [
         "product designer", "ux designer", "ui designer", "ui/ux designer",
