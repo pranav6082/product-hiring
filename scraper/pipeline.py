@@ -53,6 +53,12 @@ TITLE_DOMAINS = {
         "business associate", "special assistant", "executive assistant to ceo",
         "chief of staff to ceo", "chief of staff to founder",
         "strategy & operations", "strategy and operations",
+        "business strategy", "corporate strategy", "strategy lead", "strategy manager",
+        "chief business officer", "cbo", "head of business operations",
+        "special projects", "strategic advisor", "strategic partnerships",
+        "business operations manager", "business operations lead",
+        "operations strategy", "growth strategy", "product strategy",
+        "chief growth officer", "cgo",
     ],
 }
 
