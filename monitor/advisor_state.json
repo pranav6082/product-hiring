@@ -1,21 +1,22 @@
 {
   "last_change": {
-    "ts": "2026-05-30T06:00:25Z",
+    "ts": "2026-05-31T06:39:22Z",
     "commits": [
-      "7441607762d29795c04b59747966cff0cbcdbfa7",
-      "f7e5e374b655d76e126cd2ca3e8bd302fa0902ca",
-      "a045e8f5657c9afba56dc75d2c5b5fef26fd5953"
+      "dc2851f08c32fb0260c9f44980727f1d008e3e6f",
+      "72be4678ddbc14216e6c047692a366432ab8cb9c",
+      "6aba84b0c84692a41103e8717242e57a53b00ba1"
     ],
     "metric": {
-      "quality_passed": 18,
+      "quality_passed": 19,
       "pm_current": 17,
       "fo_current": 6
     },
     "descriptions": [
-      "Expand the 'strategy' domain keywords to include more common variations for Founder's Office and Chief of Staff roles, addressing the low FO/CoS approval rate. This will allow more relevant jobs to be ingested and classified correctly.",
-      "Expand the 'pm' domain keywords to include more common variations and ensure better coverage for Product Manager roles, addressing the low PM board count. This will help ingest more relevant PM jobs.",
-      "Refine the `DIRTY_COMPANY_PATTERNS` to be less aggressive. 'founding team' and 'founding member' are legitimate parts of company names in some contexts, and removing them from the dirty patterns will prevent false positives and allow more companies to be correctly identified.",
-      "config: add_queries"
+      "Expand the PM title whitelist to include more common variations and remove 'product owner' and 'technical product manager' which are often not true PM roles in the context of this board's quality bar. Also, remove 'product evangelist' and 'product specialist' as they are often marketing/sales-adjacent.",
+      "Expand the 'strategy' domain to include more common Chief of Staff and Founder's Office titles, as per SPEC.md v0.4, and remove 'business associate', 'special assistant', 'executive assistant to ceo' which are too broad and often not CoS/FO roles.",
+      "Fix a bug in `_extract_company_from_search_result` for iimjobs.com URLs. The regex `r'-[0-9]+(-[0-9]+)*$'` was too aggressive, stripping valid company name parts that contained numbers (e.g., 'Hevo Data 2023'). It should only strip trailing numeric IDs, not numbers within the company name. Also, ensure that the company slug is not just a role keyword after stripping.",
+      "config: add_queries",
+      "config: add_companies"
     ]
   }
 }
