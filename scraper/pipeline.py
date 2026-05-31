@@ -54,15 +54,15 @@ TITLE_DOMAINS = {
         "entrepreneur in residence", "eir", " eir ",
         "head of special projects", "special projects lead", "special projects manager",
         "strategic initiatives",   # startup-context guard applied at enrich step
-        "business associate", "special assistant", "executive assistant to ceo",
         "chief of staff to ceo", "chief of staff to founder",
         "strategy & operations", "strategy and operations",
-        "business strategy", "corporate strategy", "strategy lead", "strategy manager",
-        "chief business officer", "cbo", "head of business operations",
+        "business strategy", "strategy lead", "strategy manager",
+        "head of business operations", "business operations manager", "business operations lead",
         "special projects", "strategic advisor", "strategic partnerships",
-        "business operations manager", "business operations lead",
         "operations strategy", "growth strategy", "product strategy",
         "chief growth officer", "cgo",
+        "chief business officer", "cbo",
+        "business operations",
     ],
 }
 
