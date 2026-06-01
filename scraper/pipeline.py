@@ -942,7 +942,7 @@ def _extract_company_from_search_result(result_title: str, url: str) -> str:
                 "entrepreneur-in-residence", "founding-member",
                 "senior-product", "associate-product", "founding-team",
                 "head-sourcing", "head-of", "vp-of", "director-of",
-                "lead-product", "associate-director",
+                "lead-product", "associate-director", "product-management"
             ]
             cut = len(slug)
             for kw in role_kws:
@@ -952,14 +952,15 @@ def _extract_company_from_search_result(result_title: str, url: str) -> str:
             company_slug = slug[:cut].strip("-")
             # Strip iimjobs qualification suffixes: "-iim-isb-mdi-fms", year ranges
             company_slug = re.sub(r'-(iim|isb|mdi|fms|nit|bits|xlri|iit).*$', '', company_slug)
-            company_slug = re.sub(r'-\d+$', '', company_slug) # Only strip trailing numeric ID
+            # Only strip trailing numeric ID once
+            company_slug = re.sub(r'-\d+$', '', company_slug)
             company_slug = company_slug.strip("-")
             # Reject if too short (< 2 chars), starts with role keyword, or all-caps abbreviation
             if company_slug and len(company_slug) >= 2 and not any(company_slug.lower() == kw.replace('-', '') for kw in role_kws):
                 # Allow company slugs that might contain role keywords if they are not *just* the keyword
                 # and are not in the JUNK_COMPANY_NAMES list.
                 cleaned_company = company_slug.replace("-", " ").title()
-                if cleaned_company.lower() not in JUNK_COMPANY_NAMES:
+                if cleaned_company.lower() not in [jc.lower() for jc in JUNK_COMPANY_NAMES]:
                     return cleaned_company
             return "Unknown"
 
