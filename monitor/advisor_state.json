@@ -1,22 +1,19 @@
 {
   "last_change": {
-    "ts": "2026-05-31T06:39:22Z",
+    "ts": "2026-06-01T07:28:49Z",
     "commits": [
-      "dc2851f08c32fb0260c9f44980727f1d008e3e6f",
-      "72be4678ddbc14216e6c047692a366432ab8cb9c",
-      "6aba84b0c84692a41103e8717242e57a53b00ba1"
+      "7a346807f4337ebafaceaafcf7957b45a7354c2c",
+      "044ee3c8c4b44053ae6e2de513b26df4ca997340"
     ],
     "metric": {
       "quality_passed": 19,
       "pm_current": 17,
-      "fo_current": 6
+      "fo_current": 5
     },
     "descriptions": [
-      "Expand the PM title whitelist to include more common variations and remove 'product owner' and 'technical product manager' which are often not true PM roles in the context of this board's quality bar. Also, remove 'product evangelist' and 'product specialist' as they are often marketing/sales-adjacent.",
-      "Expand the 'strategy' domain to include more common Chief of Staff and Founder's Office titles, as per SPEC.md v0.4, and remove 'business associate', 'special assistant', 'executive assistant to ceo' which are too broad and often not CoS/FO roles.",
-      "Fix a bug in `_extract_company_from_search_result` for iimjobs.com URLs. The regex `r'-[0-9]+(-[0-9]+)*$'` was too aggressive, stripping valid company name parts that contained numbers (e.g., 'Hevo Data 2023'). It should only strip trailing numeric IDs, not numbers within the company name. Also, ensure that the company slug is not just a role keyword after stripping.",
-      "config: add_queries",
-      "config: add_companies"
+      "Move 'business operations' and 'strategy & operations' from `NON_PRODUCT_ROLES` to `TITLE_DOMAINS['strategy']`. These are legitimate keywords for Founder's Office/Chief of Staff roles, especially in a startup context, and were being incorrectly blocked, leading to the low FO/CoS conversion.",
+      "Fix a bug in `_extract_company_from_search_result` for iimjobs URLs where the regex `re.sub(r'-\\d+$', '', slug)` was applied twice, potentially stripping valid company name parts if they ended with digits. Also, the `role_kws` list was missing 'product-management', which could lead to incorrect company extraction for PM roles on iimjobs. The `JUNK_COMPANY_NAMES` check should be case-insensitive.",
+      "config: add_queries"
     ]
   }
 }
