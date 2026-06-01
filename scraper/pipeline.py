@@ -107,7 +107,6 @@ NON_PRODUCT_ROLES = [
     "director of strategy", "chief strategy officer",
     "chief business officer",
     "head of strategy",
-    "business operations", "strategy & operations", "strategy and operations",
 ]
 
 # Block words — if title contains these, skip regardless of domain match
