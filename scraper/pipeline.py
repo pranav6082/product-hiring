@@ -53,16 +53,8 @@ TITLE_DOMAINS = {
         "founder's office", "founders office", "founder office", "office of the founder", "fo",
         "entrepreneur in residence", "eir", " eir ",
         "head of special projects", "special projects lead", "special projects manager",
-        "strategic initiatives",   # startup-context guard applied at enrich step
         "chief of staff to ceo", "chief of staff to founder",
-        "strategy & operations", "strategy and operations",
-        "business strategy", "strategy lead", "strategy manager",
-        "head of business operations", "business operations manager", "business operations lead",
-        "special projects", "strategic advisor", "strategic partnerships",
-        "operations strategy", "growth strategy", "product strategy",
-        "chief growth officer", "cgo",
-        "chief business officer", "cbo",
-        "business operations",
+        "founding team", "founding member",
     ],
 }
 
