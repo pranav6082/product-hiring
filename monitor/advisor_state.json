@@ -1,9 +1,10 @@
 {
   "last_change": {
-    "ts": "2026-06-01T07:28:49Z",
+    "ts": "2026-06-02T07:07:44Z",
     "commits": [
-      "7a346807f4337ebafaceaafcf7957b45a7354c2c",
-      "044ee3c8c4b44053ae6e2de513b26df4ca997340"
+      "c019e66ee3fd36a55778ffe8fe28be328ec8df3c",
+      "2ee0e6c196b459e127b7cb58956bd8bfc3625723",
+      "9f32f3765225b1cc7249899206e3688ced5bf00f"
     ],
     "metric": {
       "quality_passed": 19,
@@ -11,8 +12,9 @@
       "fo_current": 5
     },
     "descriptions": [
-      "Move 'business operations' and 'strategy & operations' from `NON_PRODUCT_ROLES` to `TITLE_DOMAINS['strategy']`. These are legitimate keywords for Founder's Office/Chief of Staff roles, especially in a startup context, and were being incorrectly blocked, leading to the low FO/CoS conversion.",
-      "Fix a bug in `_extract_company_from_search_result` for iimjobs URLs where the regex `re.sub(r'-\\d+$', '', slug)` was applied twice, potentially stripping valid company name parts if they ended with digits. Also, the `role_kws` list was missing 'product-management', which could lead to incorrect company extraction for PM roles on iimjobs. The `JUNK_COMPANY_NAMES` check should be case-insensitive.",
+      "Refine the 'strategy' domain to be more specific to Founder's Office/Chief of Staff roles, aligning with SPEC.md v0.4. This will reduce the ingestion of out-of-scope roles that are later rejected, improving the FO/CoS conversion rate.",
+      "Relax the `_extract_company_from_search_result` logic for iimjobs to be less aggressive in stripping potential company names that might contain role keywords, as long as they are not explicitly junk. This should help capture more valid company names and improve PM board volume.",
+      "Remove 'founding team' and 'founding member' from `DIRTY_COMPANY_PATTERNS`. These are legitimate parts of company names for early-stage roles and should not be flagged as dirty, preventing unnecessary rejections.",
       "config: add_queries"
     ]
   }
