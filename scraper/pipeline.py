@@ -948,11 +948,10 @@ def _extract_company_from_search_result(result_title: str, url: str) -> str:
             company_slug = re.sub(r'-\d+$', '', company_slug)
             company_slug = company_slug.strip("-")
             # Reject if too short (< 2 chars), starts with role keyword, or all-caps abbreviation
-            if company_slug and len(company_slug) >= 2 and not any(company_slug.lower() == kw.replace('-', '') for kw in role_kws):
-                # Allow company slugs that might contain role keywords if they are not *just* the keyword
-                # and are not in the JUNK_COMPANY_NAMES list.
+            if company_slug and len(company_slug) >= 2:
                 cleaned_company = company_slug.replace("-", " ").title()
-                if cleaned_company.lower() not in [jc.lower() for jc in JUNK_COMPANY_NAMES]:
+                # Only reject if it's *just* a role keyword or in JUNK_COMPANY_NAMES
+                if cleaned_company.lower() not in [kw.replace('-', ' ') for kw in role_kws] and cleaned_company.lower() not in [jc.lower() for jc in JUNK_COMPANY_NAMES]:
                     return cleaned_company
             return "Unknown"
 
