@@ -31,7 +31,7 @@ DIRTY_COMPANY_PATTERNS = re.compile(
     r'\d{3,}'                          # 3+ consecutive digits (slug IDs)
     r'|039'                            # HTML entity artifact
     r'|product manager|product designer'
-    r'|data analyst|growth analyst', # Removed 'founding team' and 'founding member' as they are often part of company names, not just roles.
+    r'|data analyst|growth analyst',
     re.IGNORECASE,
 )
 
