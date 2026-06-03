@@ -1,20 +1,20 @@
 {
   "last_change": {
-    "ts": "2026-06-02T07:07:44Z",
+    "ts": "2026-06-03T07:21:18Z",
     "commits": [
-      "c019e66ee3fd36a55778ffe8fe28be328ec8df3c",
-      "2ee0e6c196b459e127b7cb58956bd8bfc3625723",
-      "9f32f3765225b1cc7249899206e3688ced5bf00f"
+      "24000c6496d8ebe4bd13869d89da3b9ff5454329",
+      "d0cbcded5222a85c3f37462d19e824d03db8c245",
+      "d7f057c04bdc45b8c67de8e9da79adc6657eb7d6"
     ],
     "metric": {
       "quality_passed": 19,
-      "pm_current": 17,
-      "fo_current": 5
+      "pm_current": 18,
+      "fo_current": 4
     },
     "descriptions": [
-      "Refine the 'strategy' domain to be more specific to Founder's Office/Chief of Staff roles, aligning with SPEC.md v0.4. This will reduce the ingestion of out-of-scope roles that are later rejected, improving the FO/CoS conversion rate.",
-      "Relax the `_extract_company_from_search_result` logic for iimjobs to be less aggressive in stripping potential company names that might contain role keywords, as long as they are not explicitly junk. This should help capture more valid company names and improve PM board volume.",
-      "Remove 'founding team' and 'founding member' from `DIRTY_COMPANY_PATTERNS`. These are legitimate parts of company names for early-stage roles and should not be flagged as dirty, preventing unnecessary rejections.",
+      "Remove 'founding team' and 'founding member' from DIRTY_COMPANY_PATTERNS. These terms are often legitimate parts of company names or context for Founder's Office roles and should not cause a job to be flagged as dirty, as per the SPEC.md v0.4 which explicitly includes 'Founding Team' in scope.",
+      "Expand the 'strategy' domain keywords to include more common variations for Founder's Office and Chief of Staff roles, as per SPEC.md v0.4, to improve the ingestion rate for these roles. This includes 'chief of staff' without 'to' and 'office of founder'.",
+      "Add more common PM title variations to the 'pm' domain to increase the ingestion of relevant Product Manager roles, addressing the critically low PM board count. This includes common abbreviations and slightly different phrasing that still clearly indicate a PM role.",
       "config: add_queries"
     ]
   }
