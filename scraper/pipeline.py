@@ -51,6 +51,8 @@ TITLE_DOMAINS = {
         # Corporate strategy titles (VP Strategy, CSO, etc.) are OUT OF SCOPE — see SPEC.md v0.4.
         "chief of staff", "chief of staff to", "cos",
         "founder's office", "founders office", "founder office", "office of the founder", "fo",
+        "chief of staff, ", "chief of staff to the", "chief of staff to a",
+        "office of founder", "office of ceo",
         "entrepreneur in residence", "eir", " eir ",
         "head of special projects", "special projects lead", "special projects manager",
         "chief of staff to ceo", "chief of staff to founder",
