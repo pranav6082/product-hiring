@@ -1,20 +1,20 @@
 {
   "last_change": {
-    "ts": "2026-06-03T07:21:18Z",
+    "ts": "2026-06-04T07:01:56Z",
     "commits": [
-      "24000c6496d8ebe4bd13869d89da3b9ff5454329",
-      "d0cbcded5222a85c3f37462d19e824d03db8c245",
-      "d7f057c04bdc45b8c67de8e9da79adc6657eb7d6"
+      "2edd730ea0cfb439260f136fb4315c1fe0b7a489",
+      "b16b7081f9275164022eeda4f4e84148d5f51dbc",
+      "5202d532a5caf9dcdebdce5e950417a6f8587444"
     ],
     "metric": {
-      "quality_passed": 19,
-      "pm_current": 18,
+      "quality_passed": 18,
+      "pm_current": 20,
       "fo_current": 4
     },
     "descriptions": [
-      "Remove 'founding team' and 'founding member' from DIRTY_COMPANY_PATTERNS. These terms are often legitimate parts of company names or context for Founder's Office roles and should not cause a job to be flagged as dirty, as per the SPEC.md v0.4 which explicitly includes 'Founding Team' in scope.",
-      "Expand the 'strategy' domain keywords to include more common variations for Founder's Office and Chief of Staff roles, as per SPEC.md v0.4, to improve the ingestion rate for these roles. This includes 'chief of staff' without 'to' and 'office of founder'.",
-      "Add more common PM title variations to the 'pm' domain to increase the ingestion of relevant Product Manager roles, addressing the critically low PM board count. This includes common abbreviations and slightly different phrasing that still clearly indicate a PM role.",
+      "Expand the `strategy` domain keywords to include more common variations and abbreviations for 'Founder's Office' and 'Chief of Staff' roles, as well as 'Special Projects' which often falls under this umbrella in startups. This will increase the ingestion of relevant FO/CoS jobs.",
+      "Correct the `_extract_company_from_search_result` logic for iimjobs URLs. The `re.sub(r'-\\d+$', '', slug)` line was stripping *any* trailing digits, which could be part of a legitimate company name (e.g., 'Company123'). It should only strip the *last* numeric ID after the role keywords have been identified, and only if it's a standalone ID. The current logic also strips it too early. This change ensures the company name is extracted correctly before any ID stripping.",
+      "Refine the iimjobs company extraction to correctly handle the trailing numeric ID. The previous change identified the company slug. This change ensures the trailing ID is stripped *after* the company slug is determined, and only if it's a standalone ID, preventing legitimate company names with numbers from being truncated.",
       "config: add_queries"
     ]
   }
