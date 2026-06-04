@@ -932,7 +932,7 @@ def _extract_company_from_search_result(result_title: str, url: str) -> str:
         # Company is the prefix BEFORE the first role keyword in the slug
         if "iimjobs.com" in host and path.startswith("/j/"):
             slug = path.split("/j/")[-1]
-            slug = re.sub(r'-\d+$', '', slug)  # strip trailing ID
+            # First, identify the company part before any role keywords
             role_kws = [
                 "chief-of-staff", "product-manager", "product-designer",
                 "ux-designer", "data-analyst", "growth-analyst",
