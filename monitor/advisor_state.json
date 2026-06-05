@@ -1,21 +1,20 @@
 {
   "last_change": {
-    "ts": "2026-06-04T07:01:56Z",
+    "ts": "2026-06-05T06:48:35Z",
     "commits": [
-      "2edd730ea0cfb439260f136fb4315c1fe0b7a489",
-      "b16b7081f9275164022eeda4f4e84148d5f51dbc",
-      "5202d532a5caf9dcdebdce5e950417a6f8587444"
+      "775bd12be8d7848bb000b11dffd1670931fa4792",
+      "bad325e20114926a0cdd72b846a2822948ba7964"
     ],
     "metric": {
-      "quality_passed": 18,
+      "quality_passed": 19,
       "pm_current": 20,
       "fo_current": 4
     },
     "descriptions": [
-      "Expand the `strategy` domain keywords to include more common variations and abbreviations for 'Founder's Office' and 'Chief of Staff' roles, as well as 'Special Projects' which often falls under this umbrella in startups. This will increase the ingestion of relevant FO/CoS jobs.",
-      "Correct the `_extract_company_from_search_result` logic for iimjobs URLs. The `re.sub(r'-\\d+$', '', slug)` line was stripping *any* trailing digits, which could be part of a legitimate company name (e.g., 'Company123'). It should only strip the *last* numeric ID after the role keywords have been identified, and only if it's a standalone ID. The current logic also strips it too early. This change ensures the company name is extracted correctly before any ID stripping.",
-      "Refine the iimjobs company extraction to correctly handle the trailing numeric ID. The previous change identified the company slug. This change ensures the trailing ID is stripped *after* the company slug is determined, and only if it's a standalone ID, preventing legitimate company names with numbers from being truncated.",
-      "config: add_queries"
+      "Expand the `TITLE_DOMAINS['strategy']` list to include more common Founder's Office and Chief of Staff title variations, improving the classification rate for these roles.",
+      "Correct the logic for stripping numeric IDs from iimjobs company slugs. The current regex `re.sub(r'-\\d+$', '', company_slug)` incorrectly removes IDs that are part of a legitimate company name (e.g., 'Company-123') if they appear at the end. It should only remove standalone numeric IDs that are clearly not part of the company name. This change ensures that only IDs that are clearly job IDs are removed, preventing valid company names from being truncated or misidentified as 'Unknown'.",
+      "config: add_queries",
+      "config: add_companies"
     ]
   }
 }
