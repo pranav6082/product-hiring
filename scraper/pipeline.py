@@ -955,8 +955,10 @@ def _extract_company_from_search_result(result_title: str, url: str) -> str:
             company_slug = slug[:cut].strip("-")
             # Strip iimjobs qualification suffixes: "-iim-isb-mdi-fms", year ranges
             company_slug = re.sub(r'-(iim|isb|mdi|fms|nit|bits|xlri|iit).*$', '', company_slug)
-            # Strip trailing numeric ID if it's a standalone ID after the company name
-            company_slug = re.sub(r'-\d+$', '', company_slug) if re.search(r'-\d+$', company_slug) else company_slug
+            # Strip trailing numeric ID if it's a standalone ID after the company name, but only if it's not part of a common company naming pattern.
+            # This regex targets IDs that are clearly job IDs, not part of a company name like 'Company-360'.
+            if re.search(r'-\d{5,}$', company_slug): # Target 5+ digit IDs as likely job IDs
+                company_slug = re.sub(r'-\d+$', '', company_slug)
             company_slug = company_slug.strip("-")
             # Reject if too short (< 2 chars), starts with role keyword, or all-caps abbreviation
             if company_slug and len(company_slug) >= 2:
