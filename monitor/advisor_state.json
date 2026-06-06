@@ -1,20 +1,3 @@
 {
-  "last_change": {
-    "ts": "2026-06-05T06:48:35Z",
-    "commits": [
-      "775bd12be8d7848bb000b11dffd1670931fa4792",
-      "bad325e20114926a0cdd72b846a2822948ba7964"
-    ],
-    "metric": {
-      "quality_passed": 19,
-      "pm_current": 20,
-      "fo_current": 4
-    },
-    "descriptions": [
-      "Expand the `TITLE_DOMAINS['strategy']` list to include more common Founder's Office and Chief of Staff title variations, improving the classification rate for these roles.",
-      "Correct the logic for stripping numeric IDs from iimjobs company slugs. The current regex `re.sub(r'-\\d+$', '', company_slug)` incorrectly removes IDs that are part of a legitimate company name (e.g., 'Company-123') if they appear at the end. It should only remove standalone numeric IDs that are clearly not part of the company name. This change ensures that only IDs that are clearly job IDs are removed, preventing valid company names from being truncated or misidentified as 'Unknown'.",
-      "config: add_queries",
-      "config: add_companies"
-    ]
-  }
+  "last_change": null
 }
