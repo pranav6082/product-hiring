@@ -61,6 +61,12 @@ TITLE_DOMAINS = {
         "founding team", "founding member", "founding associate", "founding operations",
         "business associate", "strategic initiatives", "strategy & operations",
         "chief business officer", "chief strategy officer", "head of strategy and operations",
+        "chief of staff to the ceo", "chief of staff to the founder", "chief of staff to founder", "chief of staff to ceo",
+        "chief of staff to a founder", "chief of staff to a ceo", "chief of staff to an executive",
+        "founder's associate", "founder associate", "ceo's office", "ceo office",
+        "special assistant to ceo", "special assistant to founder", "executive assistant to ceo",
+        "business operations manager", "business operations lead", "business operations director",
+        "strategy and operations manager", "strategy and operations lead", "strategy and operations director",
     ],
 }
 
