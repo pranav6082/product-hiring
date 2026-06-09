@@ -957,8 +957,7 @@ def _extract_company_from_search_result(result_title: str, url: str) -> str:
             # Strip iimjobs qualification suffixes: "-iim-isb-mdi-fms", year ranges
             company_slug = re.sub(r'-(iim|isb|mdi|fms|nit|bits|xlri|iit).*$', '', company_slug)
             # Strip trailing numeric ID if it's a standalone ID after the company name
-            # Only strip trailing numeric ID if it's a standalone ID after the company name, not part of a company name like 'Company-123'
-            company_slug = re.sub(r'-(?<![a-zA-Z])\d+$', '', company_slug) if re.search(r'-(?<![a-zA-Z])\d+$', company_slug) else company_slug
+            company_slug = re.sub(r'-\d+$', '', company_slug) if re.search(r'-\d+$', company_slug) else company_slug
             company_slug = company_slug.strip("-")
             # Reject if too short (< 2 chars), starts with role keyword, or all-caps abbreviation
             if company_slug and len(company_slug) >= 2:
