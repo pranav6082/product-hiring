@@ -50,17 +50,14 @@ TITLE_DOMAINS = {
     ],
     "strategy": [
         # v0.4 scope: Founder's Office / Chief of Staff only.
-        # Corporate strategy titles (VP Strategy, CSO, etc.) are OUT OF SCOPE — see SPEC.md v0.4.
         "chief of staff", "chief of staff to", "cos",
         "founder's office", "founders office", "founder office", "office of the founder", "fo",
         "chief of staff, ", "chief of staff to the", "chief of staff to a",
         "office of founder", "office of ceo", "office of the ceo",
         "entrepreneur in residence", "eir", " eir ",
-        "head of special projects", "special projects lead", "special projects manager", "special projects",
+        "head of special projects", "special projects lead", "special projects manager",
         "chief of staff to ceo", "chief of staff to founder", "chief of staff to the ceo", "chief of staff to the founder",
         "founding team", "founding member", "founding associate", "founding operations",
-        "business associate", "strategic initiatives", "strategy & operations",
-        "chief business officer", "chief strategy officer", "head of strategy and operations",
     ],
 }
 
