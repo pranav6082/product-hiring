@@ -1,3 +1,21 @@
 {
-  "last_change": null
+  "last_change": {
+    "ts": "2026-06-10T06:47:56Z",
+    "commits": [
+      "3c2b584a3a1b2341bb8e551168a01be7c61a88c9",
+      "2230cc86ebfbc5cc2331eecb41848b81ccd2077e",
+      "db1ea0bb57e1f09ec64a196f3669e73c60be8c7d"
+    ],
+    "metric": {
+      "quality_passed": 20,
+      "pm_current": 24,
+      "fo_current": 5
+    },
+    "descriptions": [
+      "Refine the 'strategy' domain keywords to strictly adhere to the SPEC.md v0.4 scope (Founder's Office / Chief of Staff only). This will prevent ingestion of irrelevant corporate strategy roles, improving the FO/CoS conversion rate.",
+      "Move corporate strategy titles from `NON_PRODUCT_ROLES` to `NOISE_TITLES` or remove them if they are already covered by the refined `strategy` domain. This ensures these roles are rejected earlier in the pipeline, reducing noise and improving conversion.",
+      "Add 'strategic initiatives' and 'strategy & operations' to `NOISE_TITLES` to prevent their ingestion unless they are explicitly part of a Founder's Office/Chief of Staff title, which is now handled by the refined `strategy` domain. This prevents the ingestion of broad corporate strategy roles that are later rejected by `enrich.py`'s startup-context guard.",
+      "config: add_queries"
+    ]
+  }
 }
