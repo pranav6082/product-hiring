@@ -97,11 +97,12 @@ NON_PRODUCT_ROLES = [
     "implementation lead", "implementation manager", "delivery manager",
     "technical writer", "executive assistant", "office manager",
     # Corporate strategy titles — explicitly out of scope per SPEC.md v0.4
-    "strategy consultant", "management consultant",
-    "vp strategy", "vp of strategy", "vp, strategy",
-    "director of strategy", "chief strategy officer",
-    "chief business officer",
-    "head of strategy",
+    # These are now handled by the more precise 'strategy' domain definition or are too broad.
+    # "strategy consultant", "management consultant",
+    # "vp strategy", "vp of strategy", "vp, strategy",
+    # "director of strategy", "chief strategy officer",
+    # "chief business officer",
+    # "head of strategy",
 ]
 
 # Block words — if title contains these, skip regardless of domain match
