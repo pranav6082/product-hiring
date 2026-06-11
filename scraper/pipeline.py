@@ -49,7 +49,6 @@ TITLE_DOMAINS = {
         "product data", "analytics lead", "growth manager",
     ],
     "strategy": [
-        # v0.4 scope: Founder's Office / Chief of Staff only.
         "chief of staff", "chief of staff to", "cos",
         "founder's office", "founders office", "founder office", "office of the founder", "fo",
         "chief of staff, ", "chief of staff to the", "chief of staff to a",
@@ -58,6 +57,10 @@ TITLE_DOMAINS = {
         "head of special projects", "special projects lead", "special projects manager",
         "chief of staff to ceo", "chief of staff to founder", "chief of staff to the ceo", "chief of staff to the founder",
         "founding team", "founding member", "founding associate", "founding operations",
+        "strategy manager", "strategy lead", "strategy director", "vp strategy", "head of strategy",
+        "chief strategy officer", "cso", "business strategy", "corporate strategy",
+        "strategic initiatives", "strategy & operations", "strategic planning",
+        "founding partner", "founding ceo", "founding cto", "founding cmo",
     ],
 }
 
