@@ -86,10 +86,12 @@ def fetch_dirty_jobs(limit: int, force: bool = False):
             WHEN review_status = 'pending' AND india_hiring = 'unknown' THEN 1
             ELSE 2
           END ASC,
-          -- tier 2: PM before strategy (primary domain)
-          CASE COALESCE(norm_function, domain)
-            WHEN 'pm' THEN 1
-            ELSE 2
+          -- tier 2: PM and strategy are both primary domains for v0.1/v0.4
+          -- Prioritize strategy if its board is low, otherwise PM.
+          CASE
+            WHEN COALESCE(norm_function, domain) = 'strategy' AND (SELECT COUNT(*) FROM jobs WHERE COALESCE(norm_function, domain) = 'strategy' AND review_status = 'approved') < 30 THEN 1
+            WHEN COALESCE(norm_function, domain) = 'pm' THEN 2
+            ELSE 3
           END ASC,
           -- tier 3: seniority (covers both PM and CoS/FO titles)
           CASE
