@@ -116,7 +116,7 @@ NOISE_TITLES = [
     "security analyst", "pricing analyst", "marketing analyst", "financial analyst",
     "business analyst", "system analyst", "hr analyst",
     "printer operator", "delivery driver",
-    "strategic initiatives", "strategy & operations",
+    "printer operator", "delivery driver",
 ]
 LOCATION_ALIASES = {
     "bangalore": ("Bengaluru", "Karnataka", "India"),
