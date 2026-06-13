@@ -966,6 +966,9 @@ def _extract_company_from_search_result(result_title: str, url: str) -> str:
                 # Only reject if it's *just* a role keyword or in JUNK_COMPANY_NAMES
                 if cleaned_company.lower() not in [kw.replace('-', ' ') for kw in role_kws] and cleaned_company.lower() not in [jc.lower() for jc in JUNK_COMPANY_NAMES]:
                     return cleaned_company
+            # If we reached here, it means the company slug was problematic, but we should still try to return it if it's not 'Unknown'
+            if company_slug and len(company_slug) >= 2:
+                return company_slug.replace("-", " ").title()
             return "Unknown"
 
         # instahyre: instahyre.com/jobs/{company}/{role-slug}
