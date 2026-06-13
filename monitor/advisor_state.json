@@ -1,21 +1,22 @@
 {
   "last_change": {
-    "ts": "2026-06-11T07:13:52Z",
+    "ts": "2026-06-13T06:37:00Z",
     "commits": [
-      "7fde2d627e139664ec695776decab9cf9c344717",
-      "942470b0e1d982aab651e43ca0cd038e4ef46998",
-      "7f6dfd0504fe2a5a69d839d38b3586449e063b5c"
+      "70a3bc0a72e46d4c1ca495ec1b89740ed0574966",
+      "29198b35c54206b25703c238b571cb34781c96b0",
+      "3417d70c1b3b6df177dec7afdd2a25d7e880bda4"
     ],
     "metric": {
-      "quality_passed": 18,
-      "pm_current": 26,
+      "quality_passed": 19,
+      "pm_current": 28,
       "fo_current": 5
     },
     "descriptions": [
-      "Expand the 'strategy' domain keywords to include more common titles for Chief of Staff / Founder's Office / EIR / Founding Team / Strategy roles as per SPEC.md v0.4, which is the current scope for 'strategy' roles. This will increase the initial classification rate for these roles.",
-      "Remove 'strategic initiatives' and 'strategy & operations' from `NOISE_TITLES`. These are explicitly in scope for v0.4 'strategy' roles, especially in a startup context, and should not be hard-blocked at ingestion. The `enrich.py` script already has a guard for non-startup 'strategic initiatives'.",
-      "Adjust the `fetch_dirty_jobs` query to prioritize 'strategy' jobs equally with 'pm' jobs when the board count for 'strategy' is low. This ensures that the pipeline actively works to fill the FO/CoS board, which is currently under target. The current ordering prioritizes PM jobs, which is fine when PM is the *only* domain, but not when FO/CoS is also a target.",
-      "config: add_queries"
+      "Expand the 'strategy' domain keywords to include more common variations of Chief of Staff and Founder's Office, especially those with prepositions or common abbreviations, to improve ingestion and classification of relevant roles.",
+      "Refine the iimjobs company extraction logic to be more robust. The current logic can incorrectly return 'Unknown' if the company slug is short or matches a role keyword, even if it's a valid company. This change ensures that if a cleaned company name is found, it's returned, preventing valid companies from being discarded.",
+      "Adjust the `fetch_dirty_jobs` prioritization to more aggressively fetch 'strategy' jobs when their board count is low, ensuring that the pipeline actively tries to fill the FO/CoS board until it reaches the target.",
+      "config: add_queries",
+      "config: add_companies"
     ]
   }
 }
