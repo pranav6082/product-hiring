@@ -1,22 +1,19 @@
 {
   "last_change": {
-    "ts": "2026-06-13T06:37:00Z",
+    "ts": "2026-06-15T07:44:10Z",
     "commits": [
-      "70a3bc0a72e46d4c1ca495ec1b89740ed0574966",
-      "29198b35c54206b25703c238b571cb34781c96b0",
-      "3417d70c1b3b6df177dec7afdd2a25d7e880bda4"
+      "4eeac7b50343f8585db952d2be6e82dad88e79a9",
+      "d8d313696c449601b0f800c17ee78a7f4a4927eb"
     ],
     "metric": {
-      "quality_passed": 19,
-      "pm_current": 28,
+      "quality_passed": 20,
+      "pm_current": 29,
       "fo_current": 5
     },
     "descriptions": [
-      "Expand the 'strategy' domain keywords to include more common variations of Chief of Staff and Founder's Office, especially those with prepositions or common abbreviations, to improve ingestion and classification of relevant roles.",
-      "Refine the iimjobs company extraction logic to be more robust. The current logic can incorrectly return 'Unknown' if the company slug is short or matches a role keyword, even if it's a valid company. This change ensures that if a cleaned company name is found, it's returned, preventing valid companies from being discarded.",
-      "Adjust the `fetch_dirty_jobs` prioritization to more aggressively fetch 'strategy' jobs when their board count is low, ensuring that the pipeline actively tries to fill the FO/CoS board until it reaches the target.",
-      "config: add_queries",
-      "config: add_companies"
+      "Adjust the job fetching priority to ensure strategy jobs are processed more consistently, especially when their board is low, without being overly dependent on the PM board status. This ensures a more balanced enrichment flow for both critical domains.",
+      "Refine the 'strategy' domain keywords to be more precise and reduce noise. The current list is quite broad and might be ingesting roles that are not true Founder's Office/Chief of Staff, leading to rejections later in the pipeline. Removing overly generic terms will improve the initial classification quality.",
+      "config: add_queries"
     ]
   }
 }
