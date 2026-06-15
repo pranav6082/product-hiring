@@ -91,7 +91,9 @@ def fetch_dirty_jobs(limit: int, force: bool = False):
           CASE
             WHEN COALESCE(norm_function, domain) = 'strategy' AND (SELECT COUNT(*) FROM jobs WHERE COALESCE(norm_function, domain) = 'strategy' AND review_status = 'approved') < 30 THEN 1
             WHEN COALESCE(norm_function, domain) = 'pm' AND (SELECT COUNT(*) FROM jobs WHERE COALESCE(norm_function, domain) = 'pm' AND review_status = 'approved') < 50 THEN 2
-            ELSE 3
+            WHEN COALESCE(norm_function, domain) = 'strategy' THEN 3
+            WHEN COALESCE(norm_function, domain) = 'pm' THEN 4
+            ELSE 5
           END ASC,
           -- tier 3: seniority (covers both PM and CoS/FO titles)
           CASE
