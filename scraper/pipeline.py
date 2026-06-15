@@ -60,11 +60,7 @@ TITLE_DOMAINS = {
         "founder's office lead", "founder's office manager", "founder's office associate",
         "entrepreneur in residence", "eir", " eir ",
         "head of special projects", "special projects lead", "special projects manager",
-        "chief of staff to ceo", "chief of staff to founder", "chief of staff to the ceo", "chief of staff to the founder",
         "founding team", "founding member", "founding associate", "founding operations",
-        "strategy manager", "strategy lead", "strategy director", "vp strategy", "head of strategy",
-        "chief strategy officer", "cso", "business strategy", "corporate strategy",
-        "strategic initiatives", "strategy & operations", "strategic planning",
         "founding partner", "founding ceo", "founding cto", "founding cmo",
     ],
 }
