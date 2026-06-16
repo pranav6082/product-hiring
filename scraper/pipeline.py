@@ -59,9 +59,8 @@ TITLE_DOMAINS = {
         "chief of staff for", "chief of staff at",
         "founder's office lead", "founder's office manager", "founder's office associate",
         "entrepreneur in residence", "eir", " eir ",
-        "head of special projects", "special projects lead", "special projects manager",
-        "founding team", "founding member", "founding associate", "founding operations",
-        "founding partner", "founding ceo", "founding cto", "founding cmo",
+        "founding team member", "founding member", "founding associate", "founding operations lead",
+        "founding partner", "founding ceo office", "founding cto office", "founding cmo office",
     ],
 }
 
