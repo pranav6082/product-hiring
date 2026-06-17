@@ -50,9 +50,8 @@ TITLE_DOMAINS = {
     ],
     "strategy": [
         "chief of staff", "chief of staff to", "cos",
-        "founder's office", "founders office", "founder office", "office of the founder", "fo",
+        "founder's office", "founders office", "founder office", "fo",
         "chief of staff, ", "chief of staff to the", "chief of staff to a",
-        "office of founder", "office of ceo", "office of the ceo",
         "chief of staff to the ceo", "chief of staff to the founder",
         "chief of staff to a ceo", "chief of staff to a founder",
         "chief of staff to founder", "chief of staff to ceo",
