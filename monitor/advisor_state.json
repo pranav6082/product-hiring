@@ -1,20 +1,20 @@
 {
   "last_change": {
-    "ts": "2026-06-16T08:25:37Z",
+    "ts": "2026-06-17T07:32:16Z",
     "commits": [
-      "aabdb865c9bd45e50157542e0ecf99898037195e",
-      "b02e0b08243a524872cdfaabaadfe2133fbfd66d",
-      "2867be7fda235babba9a094f145a7107baeeab26"
+      "cdb36393af86341f4e18d2470f27743f3f44d5ca",
+      "83bf9836b257377657642794de76359cc1bd3dd2",
+      "9018ca1b4a819022a8ce667882988cdf3764e84a"
     ],
     "metric": {
       "quality_passed": 19,
-      "pm_current": 31,
-      "fo_current": 6
+      "pm_current": 33,
+      "fo_current": 8
     },
     "descriptions": [
-      "Refine the 'strategy' domain keywords to be more precise and align strictly with Founder's Office / Chief of Staff roles as per SPEC.md v0.4. This will reduce the ingestion of irrelevant roles like 'head of special projects' or 'founding team' which are often too generic or not true CoS/FO roles, improving the conversion rate.",
-      "Adjust the enrichment prioritization to favor PM roles more strongly, as PM is the primary domain for v0.1 and the FO/CoS board is currently struggling with quality. This ensures that the limited enrichment resources are spent on jobs more likely to be approved, especially given the current low FO conversion rate.",
-      "Fix a bug in `normalize_company` where a valid, cleaned company name derived from the iimjobs slug might be discarded if it was initially problematic, leading to 'Unknown'. This ensures that if a company name can be reasonably extracted, it is returned.",
+      "Refine the 'strategy' domain keywords to be more precise for Chief of Staff and Founder's Office roles, removing overly generic 'office of' patterns that might match non-relevant jobs. This focuses ingestion on higher-quality signals.",
+      "Fix a bug in `clean_company_from_url` where a problematic company slug (e.g., a role keyword) could still be returned. The logic should ensure that if `cleaned_company` is rejected, we don't fall back to a potentially problematic `company_slug`.",
+      "Adjust the enrichment prioritization to give higher weight to 'strategy' roles when their board count is low, ensuring they are processed more frequently to reach the target of 30 approved jobs.",
       "config: add_queries"
     ]
   }
