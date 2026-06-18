@@ -1,21 +1,20 @@
 {
   "last_change": {
-    "ts": "2026-06-17T07:32:16Z",
+    "ts": "2026-06-18T07:15:09Z",
     "commits": [
-      "cdb36393af86341f4e18d2470f27743f3f44d5ca",
-      "83bf9836b257377657642794de76359cc1bd3dd2",
-      "9018ca1b4a819022a8ce667882988cdf3764e84a"
+      "f180d0dc07349ca601056c7f190469dc2c4a692a",
+      "a98736f2b1fe51740ecfc49f7c123ab15ad617ca"
     ],
     "metric": {
-      "quality_passed": 19,
-      "pm_current": 33,
+      "quality_passed": 17,
+      "pm_current": 37,
       "fo_current": 8
     },
     "descriptions": [
-      "Refine the 'strategy' domain keywords to be more precise for Chief of Staff and Founder's Office roles, removing overly generic 'office of' patterns that might match non-relevant jobs. This focuses ingestion on higher-quality signals.",
-      "Fix a bug in `clean_company_from_url` where a problematic company slug (e.g., a role keyword) could still be returned. The logic should ensure that if `cleaned_company` is rejected, we don't fall back to a potentially problematic `company_slug`.",
-      "Adjust the enrichment prioritization to give higher weight to 'strategy' roles when their board count is low, ensuring they are processed more frequently to reach the target of 30 approved jobs.",
-      "config: add_queries"
+      "Remove 'product development manager' from the PM whitelist. This title often overlaps with engineering or project management and is causing false positives, as seen with 'Senior Product Development Manager' from Kiran Jewelry. This aligns with SPEC v0.1's strict PM definition.",
+      "Add 'commerce platform' to `NON_PRODUCT_ROLES` to prevent titles like 'Manager - Commerce Platform' from being misclassified as PM. This ensures stricter adherence to the PM-only scope for v0.1 and reduces noise.",
+      "config: add_queries",
+      "config: add_companies"
     ]
   }
 }
