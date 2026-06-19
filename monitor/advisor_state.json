@@ -1,18 +1,16 @@
 {
   "last_change": {
-    "ts": "2026-06-18T07:15:09Z",
+    "ts": "2026-06-19T07:37:10Z",
     "commits": [
-      "f180d0dc07349ca601056c7f190469dc2c4a692a",
-      "a98736f2b1fe51740ecfc49f7c123ab15ad617ca"
+      "4b6138603b21e850bbce36804464a9d49f1c7cc5"
     ],
     "metric": {
-      "quality_passed": 17,
-      "pm_current": 37,
+      "quality_passed": 18,
+      "pm_current": 40,
       "fo_current": 8
     },
     "descriptions": [
-      "Remove 'product development manager' from the PM whitelist. This title often overlaps with engineering or project management and is causing false positives, as seen with 'Senior Product Development Manager' from Kiran Jewelry. This aligns with SPEC v0.1's strict PM definition.",
-      "Add 'commerce platform' to `NON_PRODUCT_ROLES` to prevent titles like 'Manager - Commerce Platform' from being misclassified as PM. This ensures stricter adherence to the PM-only scope for v0.1 and reduces noise.",
+      "Refine the 'strategy' domain keywords to be more precise and less redundant, improving initial classification accuracy for Founder's Office/Chief of Staff roles.",
       "config: add_queries",
       "config: add_companies"
     ]
