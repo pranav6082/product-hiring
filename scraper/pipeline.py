@@ -51,15 +51,12 @@ TITLE_DOMAINS = {
     "strategy": [
         "chief of staff", "chief of staff to", "cos",
         "founder's office", "founders office", "founder office", "fo",
-        "chief of staff, ", "chief of staff to the", "chief of staff to a",
-        "chief of staff to the ceo", "chief of staff to the founder",
-        "chief of staff to a ceo", "chief of staff to a founder",
-        "chief of staff to founder", "chief of staff to ceo",
-        "chief of staff for", "chief of staff at",
-        "founder's office lead", "founder's office manager", "founder's office associate",
-        "entrepreneur in residence", "eir", " eir ",
-        "founding team member", "founding member", "founding associate", "founding operations lead",
-        "founding partner", "founding ceo office", "founding cto office", "founding cmo office",
+        "entrepreneur in residence", "eir",
+        "founding team member", "founding member", "founding associate",
+        "founding partner", "founding operations lead",
+        "ceo office", "cto office", "cmo office",
+        "strategic initiatives", "strategy lead", "strategy manager",
+        "business strategy", "corporate strategy",
     ],
 }
 
