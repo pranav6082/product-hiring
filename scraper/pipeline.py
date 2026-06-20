@@ -108,6 +108,15 @@ NON_PRODUCT_ROLES = [
     # "head of strategy",
 ]
 
+# Remove the commented out section if it's not meant to be active, or uncomment if it is.
+# Given the goal is to expand strategy, these should be removed from the blocklist.
+# The previous block was commented out, but the intent is to ensure these are NOT blocked.
+# The fix is to ensure they are not in the active blocklist, which they currently are not.
+# The issue is that the comment implies they are out of scope, but the SPEC.md v0.4 says they are in scope.
+# The fix is to ensure they are not in the blocklist at all, which they are not, but the comment is misleading.
+# The actual fix is to ensure the TITLE_DOMAINS['strategy'] is comprehensive enough to catch them.
+# No change needed here, as they are already commented out. The fix is in TITLE_DOMAINS.
+
 # Block words — if title contains these, skip regardless of domain match
 NOISE_TITLES = [
     "industrial", "manufacturing", "safety", "footwear", "gloves", "warehouse",
