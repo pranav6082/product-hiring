@@ -57,6 +57,10 @@ TITLE_DOMAINS = {
         "ceo office", "cto office", "cmo office",
         "strategic initiatives", "strategy lead", "strategy manager",
         "business strategy", "corporate strategy",
+        "chief business officer", "chief strategy officer", "vp strategy", "director strategy",
+        "head of strategy", "strategy and operations", "bizops", "business operations",
+        "special projects", "executive assistant to ceo", "executive associate",
+        "strategic advisor", "strategic programs", "strategy & planning",
     ],
 }
 
