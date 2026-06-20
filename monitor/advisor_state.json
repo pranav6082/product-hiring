@@ -1,18 +1,19 @@
 {
   "last_change": {
-    "ts": "2026-06-19T07:37:10Z",
+    "ts": "2026-06-20T06:45:33Z",
     "commits": [
-      "4b6138603b21e850bbce36804464a9d49f1c7cc5"
+      "30d665032484ef586cadddef8545f4862a2856c0",
+      "057ec8620c74d2d758fa66b731874949e58230ce"
     ],
     "metric": {
-      "quality_passed": 18,
-      "pm_current": 40,
+      "quality_passed": 19,
+      "pm_current": 46,
       "fo_current": 8
     },
     "descriptions": [
-      "Refine the 'strategy' domain keywords to be more precise and less redundant, improving initial classification accuracy for Founder's Office/Chief of Staff roles.",
-      "config: add_queries",
-      "config: add_companies"
+      "Expand the 'strategy' domain keywords to include more common variations for Chief of Staff and Founder's Office roles, as per SPEC.md v0.4, to improve classification and increase intake for the FO/CoS board.",
+      "Remove strategy-related titles from the `NON_PRODUCT_ROLES` blocklist. These titles are explicitly in scope for the 'strategy' domain (v0.4) and should not be prematurely rejected.",
+      "config: add_queries"
     ]
   }
 }
