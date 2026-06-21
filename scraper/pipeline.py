@@ -943,21 +943,28 @@ def _extract_company_from_search_result(result_title: str, url: str) -> str:
         if "iimjobs.com" in host and path.startswith("/j/"):
             slug = path.split("/j/")[-1]
             # First, identify the company part before any role keywords
-            role_kws = [
+            # Attempt to find the company name before a common role keyword, but be less aggressive.
+            # Prioritize longer, more specific company names.
+            company_slug = slug
+            role_kws_for_splitting = [
                 "chief-of-staff", "product-manager", "product-designer",
                 "ux-designer", "data-analyst", "growth-analyst",
                 "head-of-product", "vp-product", "founders-office",
                 "entrepreneur-in-residence", "founding-member",
                 "senior-product", "associate-product", "founding-team",
-                "head-sourcing", "head-of", "vp-of", "director-of",
-                "lead-product", "associate-director", "product-management"
+                "lead-product", "product-management"
             ]
-            cut = len(slug)
-            for kw in role_kws:
-                idx = slug.find(kw)
-                if idx >= 0:
-                    cut = min(cut, idx)
-            company_slug = slug[:cut].strip("-")
+            for kw in role_kws_for_splitting:
+                if kw in company_slug:
+                    company_slug = company_slug.split(kw)[0].strip('-')
+                    break
+            # If still long, try to split by common separators before role keywords
+            if len(company_slug) > 20:
+                for sep in ['-at-', '-for-', '-in-']:
+                    if sep in company_slug:
+                        company_slug = company_slug.split(sep)[0].strip('-')
+                        break
+            company_slug = company_slug.strip("-")
             # Strip iimjobs qualification suffixes: "-iim-isb-mdi-fms", year ranges
             company_slug = re.sub(r'-(iim|isb|mdi|fms|nit|bits|xlri|iit).*$', '', company_slug)
             # Strip trailing numeric ID if it's a standalone ID after the company name
