@@ -1,18 +1,18 @@
 {
   "last_change": {
-    "ts": "2026-06-20T06:45:33Z",
+    "ts": "2026-06-21T07:15:34Z",
     "commits": [
-      "30d665032484ef586cadddef8545f4862a2856c0",
-      "057ec8620c74d2d758fa66b731874949e58230ce"
+      "0cc73b3b57e3c9ad94f11a175c404d52cac6f931",
+      "104301785250ca501662f2a91025d26d60b1ee6c"
     ],
     "metric": {
-      "quality_passed": 19,
-      "pm_current": 46,
-      "fo_current": 8
+      "quality_passed": 17,
+      "pm_current": 45,
+      "fo_current": 9
     },
     "descriptions": [
-      "Expand the 'strategy' domain keywords to include more common variations for Chief of Staff and Founder's Office roles, as per SPEC.md v0.4, to improve classification and increase intake for the FO/CoS board.",
-      "Remove strategy-related titles from the `NON_PRODUCT_ROLES` blocklist. These titles are explicitly in scope for the 'strategy' domain (v0.4) and should not be prematurely rejected.",
+      "Refine the 'pm' domain keywords to be more precise and remove terms that frequently overlap with other domains or are too generic, ensuring better classification accuracy for core PM roles and preventing misclassification of potential 'strategy' roles.",
+      "Adjust the iimjobs company extraction logic to be less aggressive in stripping parts of the slug that might be legitimate company names, especially when they contain common role keywords. This prevents valid company names from being truncated or misidentified as 'Unknown'.",
       "config: add_queries"
     ]
   }
