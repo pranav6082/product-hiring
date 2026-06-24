@@ -1,18 +1,18 @@
 {
   "last_change": {
-    "ts": "2026-06-21T07:15:34Z",
+    "ts": "2026-06-24T06:28:40Z",
     "commits": [
-      "0cc73b3b57e3c9ad94f11a175c404d52cac6f931",
-      "104301785250ca501662f2a91025d26d60b1ee6c"
+      "a51b30a5f78a88cba3085548d18ca80c1ab7dde2",
+      "698759f6f3f5667fb2ce7a0e3e15c471f6c5a5d3"
     ],
     "metric": {
-      "quality_passed": 17,
-      "pm_current": 45,
-      "fo_current": 9
+      "quality_passed": 19,
+      "pm_current": 60,
+      "fo_current": 10
     },
     "descriptions": [
-      "Refine the 'pm' domain keywords to be more precise and remove terms that frequently overlap with other domains or are too generic, ensuring better classification accuracy for core PM roles and preventing misclassification of potential 'strategy' roles.",
-      "Adjust the iimjobs company extraction logic to be less aggressive in stripping parts of the slug that might be legitimate company names, especially when they contain common role keywords. This prevents valid company names from being truncated or misidentified as 'Unknown'.",
+      "Expand the 'strategy' domain keywords to better capture Founder's Office and Chief of Staff roles, aligning with the v0.4 scope. This includes more variations of 'chief of staff', 'founder's office', and 'strategy' related roles that are common in startups.",
+      "Refine the `startup_context_guard` for 'strategic initiatives' to be less restrictive. The current check might be too aggressive, rejecting valid startup roles. This change adds more common startup signals to ensure relevant roles are not prematurely rejected.",
       "config: add_queries"
     ]
   }
