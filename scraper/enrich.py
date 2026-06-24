@@ -536,8 +536,9 @@ def run():
             _job_domain, _job_title = _domain_row
             if _job_domain == "strategy" and "strategic initiatives" in (_job_title or "").lower():
                 startup_signals = ["series a", "series b", "series c", "seed", "startup",
-                                   "early stage", "growth stage", "founder"]
-                if not any(s in markdown.lower() for s in startup_signals):
+                                   "early stage", "growth stage", "founder", "venture capital",
+                                   "pre-seed", "founding team", "hypergrowth", "scale-up"]
+                if not any(s in md_lower for s in startup_signals):
                     print(f"  ✗ non-startup strategic initiatives: {company[:30]}")
                     cur.execute(
                         "UPDATE jobs SET review_status='rejected', last_enriched_at=%s WHERE id=%s",
