@@ -60,6 +60,18 @@ TITLE_DOMAINS = {
         "head of strategy", "strategy and operations", "bizops", "business operations",
         "special projects", "executive assistant to ceo", "executive associate",
         "strategic advisor", "strategic programs", "strategy & planning",
+        "chief of staff officer", "chief of staff operations", "chief of staff strategy",
+        "business chief of staff", "technical chief of staff", "product chief of staff",
+        "chief of staff to ceo", "chief of staff to cto", "chief of staff to cpo",
+        "chief of staff to founder", "chief of staff to president",
+        "founder's associate", "founder associate", "founder's office associate",
+        "special assistant to ceo", "special assistant to cto",
+        "strategic operations", "strategic finance", "strategic partnerships",
+        "business operations lead", "business operations manager",
+        "corporate development", "corporate development manager",
+        "chief administrative officer", "chief operating officer", "coo",
+        "head of business operations", "head of corporate development",
+        "head of strategic initiatives", "head of strategy and operations",
     ],
 }
 
