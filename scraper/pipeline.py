@@ -109,7 +109,7 @@ NON_PRODUCT_ROLES = [
     "compliance", "audit", "operations manager", "ops manager",
     # Misc roles that have leaked through
     "implementation lead", "implementation manager", "delivery manager", "commerce platform",
-    "technical writer", "executive assistant", "office manager",
+    "technical writer",
     # Corporate strategy titles — explicitly out of scope per SPEC.md v0.4
     # These are now handled by the more precise 'strategy' domain definition or are too broad.
     # "strategy consultant", "management consultant",
