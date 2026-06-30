@@ -1,3 +1,20 @@
 {
-  "last_change": null
+  "last_change": {
+    "ts": "2026-06-30T06:37:08Z",
+    "commits": [
+      "cb46a50eadc3b20c97ffe85ccbd4565ea4626693",
+      "e724a9cb07a8e648b5bf64a71ebbc2e02afaae89"
+    ],
+    "metric": {
+      "quality_passed": 18,
+      "pm_current": 62,
+      "fo_current": 9
+    },
+    "descriptions": [
+      "Expand the `TITLE_DOMAINS['strategy']` to include more common variations of Chief of Staff and Founder's Office roles, as well as broader strategy roles that are in scope for v0.4. This will increase the initial classification rate for these roles.",
+      "Remove 'executive assistant' and 'office manager' from `NON_PRODUCT_ROLES` blocklist. While some EAs are administrative, 'executive assistant to CEO' is explicitly in scope for 'strategy' and the current blocklist is too broad, potentially rejecting valid CoS/FO roles. The `TITLE_DOMAINS['strategy']` is specific enough to filter for relevant ones.",
+      "config: add_queries",
+      "config: add_companies"
+    ]
+  }
 }
