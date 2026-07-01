@@ -110,13 +110,6 @@ NON_PRODUCT_ROLES = [
     # Misc roles that have leaked through
     "implementation lead", "implementation manager", "delivery manager", "commerce platform",
     "technical writer",
-    # Corporate strategy titles — explicitly out of scope per SPEC.md v0.4
-    # These are now handled by the more precise 'strategy' domain definition or are too broad.
-    # "strategy consultant", "management consultant",
-    # "vp strategy", "vp of strategy", "vp, strategy",
-    # "director of strategy", "chief strategy officer",
-    # "chief business officer",
-    # "head of strategy",
 ]
 
 # Remove the commented out section if it's not meant to be active, or uncomment if it is.
