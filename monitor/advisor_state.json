@@ -1,17 +1,3 @@
 {
-  "last_change": {
-    "ts": "2026-07-01T06:50:23Z",
-    "commits": [
-      "2749bbc916eb2deb161a3d24e4d0e9f9cb30f6b0"
-    ],
-    "metric": {
-      "quality_passed": 19,
-      "pm_current": 63,
-      "fo_current": 10
-    },
-    "descriptions": [
-      "Remove the misleading comment about 'Corporate strategy titles' being out of scope, as SPEC v0.4 explicitly includes them. This clarifies the intent and aligns the code with the product spec.",
-      "config: add_queries"
-    ]
-  }
+  "last_change": null
 }
