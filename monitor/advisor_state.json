@@ -1,3 +1,17 @@
 {
-  "last_change": null
+  "last_change": {
+    "ts": "2026-07-06T06:51:26Z",
+    "commits": [
+      "34a1f16d899588426f13270e91bf80555937eaca"
+    ],
+    "metric": {
+      "quality_passed": 20,
+      "pm_current": 64,
+      "fo_current": 11
+    },
+    "descriptions": [
+      "Remove 'Project Manager' and 'Programme Manager' from `NON_PRODUCT_ROLES` blocklist. While these are distinct from Product Manager, they can sometimes overlap with 'Strategy' roles, especially in early-stage companies where roles are fluid. Given the low FO/CoS conversion, it's better to allow them through for enrichment and let the more nuanced `enrich.py` logic or human review filter them if they are truly out of scope, rather than blocking them at ingestion.",
+      "config: add_queries"
+    ]
+  }
 }
