@@ -102,7 +102,7 @@ NON_PRODUCT_ROLES = [
     "business development", "partner manager", "campaign manager",
     "performance marketing", "content marketing", "brand manager",
     # Project / programme (≠ product) - Temporarily allow for strategy roles to be enriched further
-    # "project manager", "project management", "programme manager", "program manager",
+    # "project manager", "project management", "programme manager", "program manager", # These are now explicitly in scope for strategy roles.
     # HR / Finance / Legal / Ops
     "hr ", "human resources", "talent acquisition", "recruiter",
     "finance manager", "controller", "tax manager", "legal counsel",
