@@ -1,16 +1,16 @@
 {
   "last_change": {
-    "ts": "2026-07-06T06:51:26Z",
+    "ts": "2026-07-07T06:28:49Z",
     "commits": [
-      "34a1f16d899588426f13270e91bf80555937eaca"
+      "fe372a903d514c277b1e23f56c0c0398f3d5bf69"
     ],
     "metric": {
-      "quality_passed": 20,
-      "pm_current": 64,
+      "quality_passed": 19,
+      "pm_current": 63,
       "fo_current": 11
     },
     "descriptions": [
-      "Remove 'Project Manager' and 'Programme Manager' from `NON_PRODUCT_ROLES` blocklist. While these are distinct from Product Manager, they can sometimes overlap with 'Strategy' roles, especially in early-stage companies where roles are fluid. Given the low FO/CoS conversion, it's better to allow them through for enrichment and let the more nuanced `enrich.py` logic or human review filter them if they are truly out of scope, rather than blocking them at ingestion.",
+      "Remove 'project manager' and 'program manager' from the `NON_PRODUCT_ROLES` blocklist. These roles are explicitly in scope for v0.4 (Strategy section) and were temporarily commented out, but the current code still implicitly blocks them. This change ensures they are correctly classified into the 'strategy' domain if their titles match.",
       "config: add_queries"
     ]
   }
