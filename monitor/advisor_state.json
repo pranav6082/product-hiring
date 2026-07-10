@@ -1,20 +1,17 @@
 {
   "last_change": {
-    "ts": "2026-07-08T05:35:10Z",
+    "ts": "2026-07-10T06:25:02Z",
     "commits": [
-      "43a541d8094edb0d424af0bfef599735ecd5a8d0",
-      "46815aa4d038feee4a0c7d59753c0f011e882a22"
+      "0cb4575ceb69df1efde079e71a60aa519822df2b"
     ],
     "metric": {
       "quality_passed": 20,
-      "pm_current": 68,
-      "fo_current": 11
+      "pm_current": 70,
+      "fo_current": 10
     },
     "descriptions": [
-      "Expand the `strategy` domain keywords to include more common variations of Chief of Staff and Founder's Office roles, as well as 'Project Manager' and 'Program Manager' when in a strategic context, as per v0.4 spec. This will increase the initial classification of relevant jobs.",
-      "Remove 'project manager' and 'program manager' from the `NON_PRODUCT_ROLES` blocklist. The SPEC.md v0.4 explicitly includes 'Strategy' roles, which can encompass these titles in a strategic context. The updated `TITLE_DOMAINS['strategy']` will now correctly classify them.",
-      "config: add_queries",
-      "config: add_companies"
+      "Expand the `strategy` domain keywords to include more common variations and broader terms for Chief of Staff and Founder's Office roles, as per the v0.4 spec. This will increase the ingestion rate of relevant jobs.",
+      "config: add_queries"
     ]
   }
 }
