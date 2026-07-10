@@ -63,8 +63,11 @@ TITLE_DOMAINS = {
         "chief administrative officer", "chief operating officer", "coo",
         "head of business operations", "head of corporate development", "head of strategic initiatives", "head of strategy and operations",
         "project manager, strategy", "program manager, strategy", "project lead, strategy", "program lead, strategy",
-        "strategic project manager", "strategic program manager", "operations strategy manager", "business strategy manager"
-    ],
+        "strategic project manager", "strategic program manager", "operations strategy manager", "business strategy manager",
+        "business operations", "strategic operations", "strategy and ops", "strategy & ops", "chief business officer",
+        "chief operating officer", "coo", "head of business operations", "head of strategy and operations",
+        "head of strategic initiatives", "corporate development", "corporate strategy lead", "business strategy lead"
+    ], 
 }
 
 # Hard blocklist — if any of these appear in title, REJECT before any domain match.
