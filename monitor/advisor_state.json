@@ -1,16 +1,18 @@
 {
   "last_change": {
-    "ts": "2026-07-10T06:25:02Z",
+    "ts": "2026-07-11T05:25:25Z",
     "commits": [
-      "0cb4575ceb69df1efde079e71a60aa519822df2b"
+      "1f582d6d346ecd830d6b9a39caed37d340eab514",
+      "fbdd72d9a76324f8dc80aaa677bdf019a8bba560"
     ],
     "metric": {
       "quality_passed": 20,
-      "pm_current": 70,
-      "fo_current": 10
+      "pm_current": 71,
+      "fo_current": 9
     },
     "descriptions": [
-      "Expand the `strategy` domain keywords to include more common variations and broader terms for Chief of Staff and Founder's Office roles, as per the v0.4 spec. This will increase the ingestion rate of relevant jobs.",
+      "Remove 'project manager, strategy' and 'program manager, strategy' from the `NON_PRODUCT_ROLES` blocklist. These are legitimate strategy roles as per SPEC v0.4 and are explicitly included in the `TITLE_DOMAINS['strategy']` list. Their presence in the blocklist causes them to be rejected during initial classification, contributing to the low FO/CoS ingestion.",
+      "Adjust the prioritization logic in `fetch_dirty_jobs` to more aggressively prioritize 'strategy' roles when their board count is low. Currently, it prioritizes PM roles even if strategy is far below its target. This change ensures that if the FO/CoS board is below its target (30), strategy jobs are prioritized over PM jobs, helping to fill the critical gap.",
       "config: add_queries"
     ]
   }
