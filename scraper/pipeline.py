@@ -104,6 +104,7 @@ NON_PRODUCT_ROLES = [
     # Misc roles that have leaked through
     "implementation lead", "implementation manager", "delivery manager", "commerce platform",
     "technical writer",
+    # "project manager, strategy", "program manager, strategy", # These are now explicitly in strategy domain
 ]
 
 # Remove the commented out section if it's not meant to be active, or uncomment if it is.
