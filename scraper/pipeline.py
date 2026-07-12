@@ -62,11 +62,9 @@ TITLE_DOMAINS = {
         "business operations lead", "business operations manager", "corporate development", "corporate development manager",
         "chief administrative officer", "chief operating officer", "coo",
         "head of business operations", "head of corporate development", "head of strategic initiatives", "head of strategy and operations",
-        "project manager, strategy", "program manager, strategy", "project lead, strategy", "program lead, strategy",
-        "strategic project manager", "strategic program manager", "operations strategy manager", "business strategy manager",
-        "business operations", "strategic operations", "strategy and ops", "strategy & ops", "chief business officer",
-        "chief operating officer", "coo", "head of business operations", "head of strategy and operations",
-        "head of strategic initiatives", "corporate development", "corporate strategy lead", "business strategy lead"
+        "strategic initiatives lead", "strategic initiatives manager", "strategic initiatives director",
+        "business operations lead", "business operations manager", "corporate development manager",
+        "corporate strategy manager", "strategy & operations lead", "strategy & operations manager"
     ], 
 }
 
