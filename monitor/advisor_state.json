@@ -1,18 +1,18 @@
 {
   "last_change": {
-    "ts": "2026-07-11T05:25:25Z",
+    "ts": "2026-07-12T05:41:24Z",
     "commits": [
-      "1f582d6d346ecd830d6b9a39caed37d340eab514",
-      "fbdd72d9a76324f8dc80aaa677bdf019a8bba560"
+      "80260d82e8b19eff6f4ca29b23d2bf4a9c0c1879",
+      "e47a7d0662ac82dfc91588d127ec13e25a047537"
     ],
     "metric": {
-      "quality_passed": 20,
-      "pm_current": 71,
+      "quality_passed": 18,
+      "pm_current": 70,
       "fo_current": 9
     },
     "descriptions": [
-      "Remove 'project manager, strategy' and 'program manager, strategy' from the `NON_PRODUCT_ROLES` blocklist. These are legitimate strategy roles as per SPEC v0.4 and are explicitly included in the `TITLE_DOMAINS['strategy']` list. Their presence in the blocklist causes them to be rejected during initial classification, contributing to the low FO/CoS ingestion.",
-      "Adjust the prioritization logic in `fetch_dirty_jobs` to more aggressively prioritize 'strategy' roles when their board count is low. Currently, it prioritizes PM roles even if strategy is far below its target. This change ensures that if the FO/CoS board is below its target (30), strategy jobs are prioritized over PM jobs, helping to fill the critical gap.",
+      "Refine the 'strategy' domain keywords to be more specific to Founder's Office/Chief of Staff roles and less generic, reducing the ingestion of irrelevant 'strategy' titles that are later rejected. This aligns with the SPEC.md v0.4 intent for 'Strategy' roles to be high-impact, startup-context roles.",
+      "Adjust the enrichment prioritization to process PM jobs before strategy jobs, even if the strategy board is low. This aligns with v0.1's primary focus on PM roles and ensures that the core PM pipeline is always prioritized for quality, while still allowing strategy jobs to be processed. The current prioritization leads to a high volume of low-quality strategy jobs being processed first, wasting resources.",
       "config: add_queries"
     ]
   }
