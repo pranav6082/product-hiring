@@ -36,7 +36,7 @@ TITLE_DOMAINS = {
         "growth product manager", "platform product manager", "ai product manager",
         "product lead", "product management lead", "product management director",
         "product management head", "product management vp", "product management chief",
-        "product owner", "product portfolio manager", "product innovation manager",
+        "product innovation manager",
     ],
     "design": [
         "product designer", "ux designer", "ui designer", "ui/ux designer",
