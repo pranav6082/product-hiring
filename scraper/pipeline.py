@@ -50,11 +50,11 @@ TITLE_DOMAINS = {
     "strategy": [
         "chief of staff", "chief of staff to", "cos", "chief of staff officer", "chief of staff operations", "chief of staff strategy",
         "business chief of staff", "technical chief of staff", "product chief of staff", "chief of staff to ceo", "chief of staff to cto", "chief of staff to cpo",
-        "chief of staff to founder", "chief of staff to president",
+        "chief of staff to founder", "chief of staff to president", "chief of staff, ", "chief of staff -",
         "founder's office", "founders office", "founder office", "fo", "founder's associate", "founder associate", "founder's office associate",
         "entrepreneur in residence", "eir",
         "founding team member", "founding member", "founding associate", "founding partner", "founding operations lead",
-        "ceo office", "cto office", "cmo office",
+        "ceo office", "cto office", "cmo office", "office of the ceo", "office of the cto", "office of the cpo",
         "strategic initiatives", "strategy lead", "strategy manager", "business strategy", "corporate strategy",
         "chief business officer", "chief strategy officer", "vp strategy", "director strategy", "head of strategy", "strategy and operations", "bizops", "business operations",
         "special projects", "executive assistant to ceo", "executive associate", "special assistant to ceo", "special assistant to cto",
@@ -64,7 +64,8 @@ TITLE_DOMAINS = {
         "head of business operations", "head of corporate development", "head of strategic initiatives", "head of strategy and operations",
         "strategic initiatives lead", "strategic initiatives manager", "strategic initiatives director",
         "business operations lead", "business operations manager", "corporate development manager",
-        "corporate strategy manager", "strategy & operations lead", "strategy & operations manager"
+        "corporate strategy manager", "strategy & operations lead", "strategy & operations manager",
+        "program manager, strategy", "project manager, strategy", "strategic program manager", "strategic project manager"
     ], 
 }
 
