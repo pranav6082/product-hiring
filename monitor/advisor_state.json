@@ -1,18 +1,20 @@
 {
   "last_change": {
-    "ts": "2026-07-12T05:41:24Z",
+    "ts": "2026-07-13T05:51:50Z",
     "commits": [
-      "80260d82e8b19eff6f4ca29b23d2bf4a9c0c1879",
-      "e47a7d0662ac82dfc91588d127ec13e25a047537"
+      "d7c5bcbf749098371a8e1b06d7169ced7f2e96a4",
+      "cb8be411da3509ffd5015a46cc6df63e6460696b",
+      "a191bbdac852131bbdc175c8bfc3c340b7f649f5"
     ],
     "metric": {
       "quality_passed": 18,
-      "pm_current": 70,
+      "pm_current": 69,
       "fo_current": 9
     },
     "descriptions": [
-      "Refine the 'strategy' domain keywords to be more specific to Founder's Office/Chief of Staff roles and less generic, reducing the ingestion of irrelevant 'strategy' titles that are later rejected. This aligns with the SPEC.md v0.4 intent for 'Strategy' roles to be high-impact, startup-context roles.",
-      "Adjust the enrichment prioritization to process PM jobs before strategy jobs, even if the strategy board is low. This aligns with v0.1's primary focus on PM roles and ensures that the core PM pipeline is always prioritized for quality, while still allowing strategy jobs to be processed. The current prioritization leads to a high volume of low-quality strategy jobs being processed first, wasting resources.",
+      "Expand the `strategy` domain keywords to include more common variations and abbreviations for Chief of Staff and Founder's Office roles, as well as related strategic titles, to improve ingestion and classification of relevant jobs.",
+      "Adjust the `fetch_dirty_jobs` query to balance the prioritization between PM and Strategy roles, ensuring that if the FO/CoS board is low, strategy jobs are prioritized more aggressively to meet their target, rather than always favoring PM jobs after the initial tiering.",
+      "Remove 'product owner' and 'product portfolio manager' from the PM domain. While related, these roles often lean more towards project management or specific product lifecycle stages rather than the core strategic PM role defined by the spec, and can introduce noise if not carefully filtered.",
       "config: add_queries"
     ]
   }
