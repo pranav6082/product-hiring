@@ -86,7 +86,7 @@ def fetch_dirty_jobs(limit: int, force: bool = False):
             WHEN review_status = 'pending' AND india_hiring = 'unknown' THEN 1
             ELSE 2
           END ASC,
-          -- tier 2: Prioritize PM jobs if below target, then strategy jobs if below target.
+          -- tier 2: Prioritize strategy jobs if below target, then PM jobs if below target.
           CASE
             WHEN COALESCE(norm_function, domain) = 'strategy' AND (SELECT COUNT(*) FROM jobs WHERE COALESCE(norm_function, domain) = 'strategy' AND review_status = 'approved') < 30 THEN 1
             WHEN COALESCE(norm_function, domain) = 'pm' AND (SELECT COUNT(*) FROM jobs WHERE COALESCE(norm_function, domain) = 'pm' AND review_status = 'approved') < 50 THEN 2
