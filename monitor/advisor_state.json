@@ -1,21 +1,20 @@
 {
   "last_change": {
-    "ts": "2026-07-13T05:51:50Z",
+    "ts": "2026-07-14T05:13:13Z",
     "commits": [
-      "d7c5bcbf749098371a8e1b06d7169ced7f2e96a4",
-      "cb8be411da3509ffd5015a46cc6df63e6460696b",
-      "a191bbdac852131bbdc175c8bfc3c340b7f649f5"
+      "d8f9bbed0d10bb117a929019e013b65b93a8c1c9",
+      "95c6eef5305f9b8cec48f6690dfc626882dfe294"
     ],
     "metric": {
-      "quality_passed": 18,
-      "pm_current": 69,
+      "quality_passed": 20,
+      "pm_current": 71,
       "fo_current": 9
     },
     "descriptions": [
-      "Expand the `strategy` domain keywords to include more common variations and abbreviations for Chief of Staff and Founder's Office roles, as well as related strategic titles, to improve ingestion and classification of relevant jobs.",
-      "Adjust the `fetch_dirty_jobs` query to balance the prioritization between PM and Strategy roles, ensuring that if the FO/CoS board is low, strategy jobs are prioritized more aggressively to meet their target, rather than always favoring PM jobs after the initial tiering.",
-      "Remove 'product owner' and 'product portfolio manager' from the PM domain. While related, these roles often lean more towards project management or specific product lifecycle stages rather than the core strategic PM role defined by the spec, and can introduce noise if not carefully filtered.",
-      "config: add_queries"
+      "Remove 'project manager, strategy' and 'program manager, strategy' from `NON_PRODUCT_ROLES` as they are explicitly in scope for the 'strategy' domain per SPEC.md v0.4 and are now included in `TITLE_DOMAINS['strategy']`. This prevents premature rejection of valid strategy roles.",
+      "Adjust the `fetch_dirty_jobs` query to prioritize strategy jobs when the FO/CoS board is below its target (30). Currently, PM jobs are prioritized even if the PM board is already over target, which starves the FO/CoS pipeline. This change ensures that strategy jobs get enriched and approved faster when needed.",
+      "config: add_queries",
+      "config: add_companies"
     ]
   }
 }
