@@ -1,20 +1,19 @@
 {
   "last_change": {
-    "ts": "2026-07-14T05:13:13Z",
+    "ts": "2026-07-15T05:13:13Z",
     "commits": [
-      "d8f9bbed0d10bb117a929019e013b65b93a8c1c9",
-      "95c6eef5305f9b8cec48f6690dfc626882dfe294"
+      "b8b68357db69702bbac0f55691f6895bf43bd95d",
+      "400266a35ef0290cc76d3e5448a2a10ed88d897a"
     ],
     "metric": {
-      "quality_passed": 20,
-      "pm_current": 71,
-      "fo_current": 9
+      "quality_passed": 19,
+      "pm_current": 74,
+      "fo_current": 10
     },
     "descriptions": [
-      "Remove 'project manager, strategy' and 'program manager, strategy' from `NON_PRODUCT_ROLES` as they are explicitly in scope for the 'strategy' domain per SPEC.md v0.4 and are now included in `TITLE_DOMAINS['strategy']`. This prevents premature rejection of valid strategy roles.",
-      "Adjust the `fetch_dirty_jobs` query to prioritize strategy jobs when the FO/CoS board is below its target (30). Currently, PM jobs are prioritized even if the PM board is already over target, which starves the FO/CoS pipeline. This change ensures that strategy jobs get enriched and approved faster when needed.",
-      "config: add_queries",
-      "config: add_companies"
+      "Relax the 'non-startup strategic initiatives' rejection logic. The current check is too strict and rejects valid strategy roles if the JD doesn't explicitly mention 'series a/b/c' or 'startup'. Many legitimate strategy roles, especially at larger but still innovative companies, might not use these exact terms. The SPEC.md v0.4 implies a broader 'Strategy' section, not strictly 'startup strategy'. Removing this hard rejection will allow more strategy roles to pass through for human review.",
+      "Expand the `TITLE_DOMAINS['strategy']` to include more common variations of Chief of Staff and Founder's Office roles, as well as 'Strategy and Operations' which was explicitly rejected in the metrics. This will increase the ingestion of relevant strategy jobs.",
+      "config: add_queries"
     ]
   }
 }
