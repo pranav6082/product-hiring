@@ -534,17 +534,7 @@ def run():
             cur.execute("SELECT COALESCE(norm_function, domain), COALESCE(norm_title, title) FROM jobs WHERE id = %s", (job_id,))
             _domain_row = cur.fetchone() or (None, "")
             _job_domain, _job_title = _domain_row
-            if _job_domain == "strategy" and "strategic initiatives" in (_job_title or "").lower():
-                startup_signals = ["series a", "series b", "series c", "seed", "startup",
-                                   "early stage", "growth stage", "founder"]
-                if not any(s in markdown.lower() for s in startup_signals):
-                    print(f"  ✗ non-startup strategic initiatives: {company[:30]}")
-                    cur.execute(
-                        "UPDATE jobs SET review_status='rejected', last_enriched_at=%s WHERE id=%s",
-                        (datetime.now(timezone.utc), job_id)
-                    )
-                    conn.commit()
-                    continue
+            # Removed: 'non-startup strategic initiatives' rejection logic. This was too strict for v0.4 Strategy roles.
 
             # "No longer accepting applications" / closed-job detection (per spec rule 5).
             # If the JD says the position is closed, mark as rejected immediately.
