@@ -65,10 +65,7 @@ TITLE_DOMAINS = {
         "strategic initiatives lead", "strategic initiatives manager", "strategic initiatives director",
         "business operations lead", "business operations manager", "corporate development manager",
         "corporate strategy manager", "strategy & operations lead", "strategy & operations manager",
-        "program manager, strategy", "project manager, strategy", "strategic program manager", "strategic project manager",
-        "strategy and operations lead", "strategy and operations manager", "strategy and operations director", "strategy and operations vp",
-        "chief of staff, operations", "chief of staff, strategy", "chief of staff, business", "chief of staff, technical",
-        "founder's office lead", "founder's office manager", "founder's office director", "founder's office vp"
+        "program manager, strategy", "project manager, strategy", "strategic program manager", "strategic project manager"
     ], 
 }
 
