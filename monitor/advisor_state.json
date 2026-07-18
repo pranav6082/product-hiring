@@ -1,3 +1,19 @@
 {
-  "last_change": null
+  "last_change": {
+    "ts": "2026-07-18T05:08:11Z",
+    "commits": [
+      "f5f02bf12e07be8526f3bc09a733437c9c034910",
+      "936e7527b4cccc2c00f6b35a602ff540706385a8"
+    ],
+    "metric": {
+      "quality_passed": 19,
+      "pm_current": 80,
+      "fo_current": 10
+    },
+    "descriptions": [
+      "Expand the `TITLE_DOMAINS['strategy']` list to include more common variations of Chief of Staff and Founder's Office roles, as well as related strategic roles, to improve classification accuracy for v0.4. This directly addresses the low conversion rate by ensuring more relevant jobs are correctly identified as 'strategy'.",
+      "Remove 'Project Manager' and 'Program Manager' from the `NON_PRODUCT_ROLES` blocklist. The SPEC.md v0.4 explicitly includes 'Strategy' roles, and these titles, when combined with 'strategy' keywords, are legitimate for the 'strategy' domain. Blocking them outright prevents valid CoS/FO roles from being ingested.",
+      "config: add_queries"
+    ]
+  }
 }
