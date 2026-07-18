@@ -112,7 +112,6 @@ NON_PRODUCT_ROLES = [
     "account manager", "account executive", "customer success",
     "business development", "partner manager", "campaign manager",
     "performance marketing", "content marketing", "brand manager",
-    # Project / programme (≠ product) - Temporarily allow for strategy roles to be enriched further
     # HR / Finance / Legal / Ops
     "hr ", "human resources", "talent acquisition", "recruiter",
     "finance manager", "controller", "tax manager", "legal counsel",
