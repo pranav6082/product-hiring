@@ -1,16 +1,16 @@
 {
   "last_change": {
-    "ts": "2026-07-20T05:53:00Z",
+    "ts": "2026-07-21T05:34:21Z",
     "commits": [
-      "3c570343bc2505785274fab77e48da249ded2527"
+      "4a48b58157455332ccbfd7847d15bc26f00ba706"
     ],
     "metric": {
       "quality_passed": 20,
-      "pm_current": 81,
-      "fo_current": 11
+      "pm_current": 83,
+      "fo_current": 12
     },
     "descriptions": [
-      "Remove redundant entries in the 'strategy' domain list to keep it clean and maintainable. This doesn't fix a bug but improves code quality.",
+      "Expand the `TITLE_DOMAINS['strategy']` list to include more common and nuanced variations of Founder's Office and Chief of Staff roles, especially those that might appear in job titles. This will increase the ingestion and correct classification of relevant jobs.",
       "config: add_queries"
     ]
   }
