@@ -1,17 +1,3 @@
 {
-  "last_change": {
-    "ts": "2026-07-21T05:34:21Z",
-    "commits": [
-      "4a48b58157455332ccbfd7847d15bc26f00ba706"
-    ],
-    "metric": {
-      "quality_passed": 20,
-      "pm_current": 83,
-      "fo_current": 12
-    },
-    "descriptions": [
-      "Expand the `TITLE_DOMAINS['strategy']` list to include more common and nuanced variations of Founder's Office and Chief of Staff roles, especially those that might appear in job titles. This will increase the ingestion and correct classification of relevant jobs.",
-      "config: add_queries"
-    ]
-  }
+  "last_change": null
 }
