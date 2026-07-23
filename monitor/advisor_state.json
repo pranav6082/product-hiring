@@ -1,3 +1,17 @@
 {
-  "last_change": null
+  "last_change": {
+    "ts": "2026-07-23T05:38:24Z",
+    "commits": [
+      "2f9c9c1fc5e952185fa36b3389a67ca30741d7e6"
+    ],
+    "metric": {
+      "quality_passed": 19,
+      "pm_current": 83,
+      "fo_current": 12
+    },
+    "descriptions": [
+      "Expand the `TITLE_DOMAINS['strategy']` list to include more common and broader terms for Founder's Office and Chief of Staff roles, as per SPEC.md v0.4. This will increase the ingestion rate for these underperforming categories.",
+      "config: add_queries"
+    ]
+  }
 }
