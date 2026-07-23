@@ -65,7 +65,19 @@ TITLE_DOMAINS = {
         "strategic initiatives lead", "strategic initiatives manager", "strategic initiatives director",
         "business operations lead", "business operations manager", "corporate development manager",
         "corporate strategy manager", "strategy & operations lead", "strategy & operations manager",
-        "program manager, strategy", "project manager, strategy", "strategic program manager", "strategic project manager"
+        "program manager, strategy", "project manager, strategy", "strategic program manager", "strategic project manager",
+        "chief of staff to the ceo", "chief of staff to the cto", "chief of staff to the cpo", "chief of staff to the founder",
+        "chief of staff, operations", "chief of staff, strategy", "chief of staff, business", "chief of staff, technical",
+        "founder's office lead", "founder's office manager", "founder's office director",
+        "special assistant", "executive assistant to the ceo", "executive assistant to the cto",
+        "business operations director", "business operations vp", "corporate strategy director", "corporate strategy vp",
+        "strategic planning manager", "strategic planning director", "strategic planning lead",
+        "chief of staff, product", "chief of staff, growth", "chief of staff, revenue",
+        "office of the president", "office of the founder", "office of the chief executive officer",
+        "strategic initiatives specialist", "strategic initiatives associate", "strategic initiatives analyst",
+        "business operations specialist", "business operations associate", "business operations analyst",
+        "corporate development specialist", "corporate development associate", "corporate development analyst",
+        "strategy and operations specialist", "strategy and operations associate", "strategy and operations analyst"
     ], 
 }
 
