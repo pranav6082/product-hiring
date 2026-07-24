@@ -1,16 +1,18 @@
 {
   "last_change": {
-    "ts": "2026-07-23T05:38:24Z",
+    "ts": "2026-07-24T05:34:49Z",
     "commits": [
-      "2f9c9c1fc5e952185fa36b3389a67ca30741d7e6"
+      "d1b57d26ef5e4a73ce03470671ca89612aeee064",
+      "8617dd341e322130977c2f1b26ecf5b252e7bb40"
     ],
     "metric": {
       "quality_passed": 19,
-      "pm_current": 83,
+      "pm_current": 84,
       "fo_current": 12
     },
     "descriptions": [
-      "Expand the `TITLE_DOMAINS['strategy']` list to include more common and broader terms for Founder's Office and Chief of Staff roles, as per SPEC.md v0.4. This will increase the ingestion rate for these underperforming categories.",
+      "Expand the `TITLE_DOMAINS['strategy']` list to include more common and specific Chief of Staff and Founder's Office related titles, as well as variations that might be missed. This directly addresses the low FO/CoS board count by improving classification at the ingestion stage.",
+      "Refine the company extraction logic from URLs to be less aggressive in stripping potential company names. The current logic might remove valid parts of a company name if they resemble role keywords or common separators, leading to 'Unknown' or truncated company names. This change makes the splitting more cautious.",
       "config: add_queries"
     ]
   }
