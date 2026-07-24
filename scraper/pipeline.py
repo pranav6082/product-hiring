@@ -975,6 +975,9 @@ def _extract_company_from_search_result(result_title: str, url: str) -> str:
             # Attempt to find the company name before a common role keyword, but be less aggressive.
             # Prioritize longer, more specific company names.
             company_slug = slug
+            # Attempt to find the company name before a common role keyword, but be less aggressive.
+            # Prioritize longer, more specific company names.
+            # Only split if the role keyword is clearly a separator, not part of the company name.
             role_kws_for_splitting = [
                 "chief-of-staff", "product-manager", "product-designer",
                 "ux-designer", "data-analyst", "growth-analyst",
@@ -983,15 +986,16 @@ def _extract_company_from_search_result(result_title: str, url: str) -> str:
                 "senior-product", "associate-product", "founding-team",
                 "lead-product", "product-management"
             ]
-            for kw in role_kws_for_splitting:
-                if kw in company_slug:
-                    company_slug = company_slug.split(kw)[0].strip('-')
+            # Try to split by common separators first, which are more reliable than role keywords.
+            for sep in ['-at-', '-for-', '-in-']:
+                if sep in company_slug:
+                    company_slug = company_slug.split(sep)[0].strip('-')
                     break
-            # If still long, try to split by common separators before role keywords
-            if len(company_slug) > 20:
-                for sep in ['-at-', '-for-', '-in-']:
-                    if sep in company_slug:
-                        company_slug = company_slug.split(sep)[0].strip('-')
+            # Then, if still long, try to split by role keywords, but only if they appear after a reasonable company name length.
+            if len(company_slug) > 5: # Only consider splitting by role keyword if company_slug is already somewhat long
+                for kw in role_kws_for_splitting:
+                    if kw in company_slug and company_slug.index(kw) > 0:
+                        company_slug = company_slug.split(kw)[0].strip('-')
                         break
             company_slug = company_slug.strip("-")
             # Strip iimjobs qualification suffixes: "-iim-isb-mdi-fms", year ranges
