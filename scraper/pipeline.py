@@ -77,7 +77,27 @@ TITLE_DOMAINS = {
         "strategic initiatives specialist", "strategic initiatives associate", "strategic initiatives analyst",
         "business operations specialist", "business operations associate", "business operations analyst",
         "corporate development specialist", "corporate development associate", "corporate development analyst",
-        "strategy and operations specialist", "strategy and operations associate", "strategy and operations analyst"
+        "strategy and operations specialist", "strategy and operations associate", "strategy and operations analyst",
+        "chief of staff, ceo", "chief of staff, cto", "chief of staff, cpo", "chief of staff, founder",
+        "chief of staff to the founder", "chief of staff to the ceo", "chief of staff to the cto",
+        "chief of staff to the cpo", "chief of staff to president", "chief of staff to the president",
+        "chief of staff, business operations", "chief of staff, corporate strategy",
+        "chief of staff, strategic operations", "chief of staff, special projects",
+        "founder's office manager", "founder's office lead", "founder's office director",
+        "founder's office associate", "founder's office analyst",
+        "eir, entrepreneur in residence", "eir, founder", "eir, startup",
+        "strategy and operations manager", "strategy and operations director", "strategy and operations lead",
+        "business operations manager", "business operations director", "business operations lead",
+        "corporate strategy manager", "corporate strategy director", "corporate strategy lead",
+        "strategic planning manager", "strategic planning director", "strategic planning lead",
+        "special projects manager", "special projects lead", "special projects director",
+        "executive assistant to ceo", "executive assistant to cto", "executive assistant to cpo",
+        "executive assistant to founder", "executive assistant to president",
+        "strategic advisor to ceo", "strategic advisor to cto", "strategic advisor to cpo",
+        "strategic advisor to founder", "strategic advisor to president",
+        "chief of staff, office of the ceo", "chief of staff, office of the cto",
+        "chief of staff, office of the cpo", "chief of staff, office of the founder",
+        "chief of staff, office of the president"
     ], 
 }
 
