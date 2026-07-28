@@ -1,3 +1,16 @@
 {
-  "last_change": null
+  "last_change": {
+    "ts": "2026-07-28T05:28:51Z",
+    "commits": [
+      "5aa17251cc3162cdb697ea11431ca8a80d71c3d2"
+    ],
+    "metric": {
+      "quality_passed": 20,
+      "pm_current": 90,
+      "fo_current": 11
+    },
+    "descriptions": [
+      "Adjust the enrichment prioritization to prioritize PM jobs more strongly, especially since the current product version (v0.1) is PM-only. While 'strategy' is a future domain, its current low conversion rate suggests that prioritizing it when below target is inefficient. This change ensures PM jobs, which are in scope and have a higher conversion, are processed first, improving overall board quality for the current goal."
+    ]
+  }
 }
