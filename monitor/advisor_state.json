@@ -1,3 +1,17 @@
 {
-  "last_change": null
+  "last_change": {
+    "ts": "2026-07-31T05:48:53Z",
+    "commits": [
+      "191db3a014e36119d5ea5ba0d2e746de74580e14"
+    ],
+    "metric": {
+      "quality_passed": 20,
+      "pm_current": 94,
+      "fo_current": 16
+    },
+    "descriptions": [
+      "Adjust the job fetching priority to prioritize strategy jobs when their board count is below target, and PM jobs when their board count is below target. This ensures that the system actively works to fill under-target boards first, before focusing on over-target boards.",
+      "config: add_queries"
+    ]
+  }
 }
