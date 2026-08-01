@@ -1,16 +1,16 @@
 {
   "last_change": {
-    "ts": "2026-07-31T05:48:53Z",
+    "ts": "2026-08-01T05:40:17Z",
     "commits": [
-      "191db3a014e36119d5ea5ba0d2e746de74580e14"
+      "36fe68bed954aa2d435a52ed29b4484d9cd500bb"
     ],
     "metric": {
       "quality_passed": 20,
-      "pm_current": 94,
-      "fo_current": 16
+      "pm_current": 93,
+      "fo_current": 17
     },
     "descriptions": [
-      "Adjust the job fetching priority to prioritize strategy jobs when their board count is below target, and PM jobs when their board count is below target. This ensures that the system actively works to fill under-target boards first, before focusing on over-target boards.",
+      "Adjust the job prioritization in `fetch_dirty_jobs` to correctly prioritize PM jobs first, then strategy jobs, when both boards are below their targets, aligning with the v0.1 spec's PM-first focus.",
       "config: add_queries"
     ]
   }
