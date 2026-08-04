@@ -1073,8 +1073,10 @@ def run_parallel():
                 domain = classify(combined)
                 if not domain:
                     continue
-                if is_us_or_non_india_listing(combined, ""):
-                    continue
+                # Relax location check for parallel_search to allow broader ingestion.
+                # Enrichment will handle precise India verification.
+                # if is_us_or_non_india_listing(combined, ""):
+                #     continue
 
                 # v0.1: PM only. Even web-search results must come from known
                 # individual-job URLs to avoid articles, blog posts, profile pages.
