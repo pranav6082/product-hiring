@@ -1,16 +1,20 @@
 {
   "last_change": {
-    "ts": "2026-08-01T05:40:17Z",
+    "ts": "2026-08-04T05:28:52Z",
     "commits": [
-      "36fe68bed954aa2d435a52ed29b4484d9cd500bb"
+      "c5588bae1049f70b0eb59008ff93f0b7444dfc3d",
+      "f365b3c3023033d863e6ecc8d63740e456bb759a",
+      "b64f552c123235f1583a92a4fce96bfee322711c"
     ],
     "metric": {
-      "quality_passed": 20,
-      "pm_current": 93,
-      "fo_current": 17
+      "quality_passed": 18,
+      "pm_current": 98,
+      "fo_current": 16
     },
     "descriptions": [
-      "Adjust the job prioritization in `fetch_dirty_jobs` to correctly prioritize PM jobs first, then strategy jobs, when both boards are below their targets, aligning with the v0.1 spec's PM-first focus.",
+      "The `is_us_or_non_india_listing` function is too aggressive for the `parallel_search` source, which is intended to be a broad net. It's rejecting too many legitimate Indian jobs. This change relaxes the location check for `parallel_search` results, allowing more jobs to be ingested and then properly filtered by the enrichment step.",
+      "The `_extract_company_from_search_result` function's logic for splitting company slugs by role keywords is too aggressive. It can incorrectly truncate valid company names if a role keyword happens to be part of the company name or if the splitting logic is applied too broadly. This change refines the splitting logic to be more cautious, ensuring that only clear separators or role keywords at the end of a slug are used for splitting, and it also ensures that the cleaned company name is not a generic role keyword itself.",
+      "The enrichment query prioritizes PM jobs over strategy jobs even when the strategy board is significantly under target. This change adjusts the prioritization to give strategy jobs a higher priority when their board count is below the target (30), ensuring that the FO/CoS board can grow faster.",
       "config: add_queries"
     ]
   }
