@@ -989,9 +989,11 @@ def _extract_company_from_search_result(result_title: str, url: str) -> str:
                     company_slug = company_slug.split(sep)[0].strip('-')
                     break
             # Then, if still long, try to split by role keywords, but only if they appear after a reasonable company name length.
+            # Make this more conservative to avoid stripping valid company names.
             if len(company_slug) > 5: # Only consider splitting by role keyword if company_slug is already somewhat long
                 for kw in role_kws_for_splitting:
-                    if kw in company_slug and company_slug.index(kw) > 0:
+                    # Only split if the keyword is at the end or followed by a clear separator
+                    if company_slug.endswith(kw) or re.search(rf'{kw}[\W_]', company_slug):
                         company_slug = company_slug.split(kw)[0].strip('-')
                         break
             company_slug = company_slug.strip("-")
@@ -1004,7 +1006,11 @@ def _extract_company_from_search_result(result_title: str, url: str) -> str:
             if company_slug and len(company_slug) >= 2:
                 cleaned_company = company_slug.replace("-", " ").title()
                 # Only return if it's not a role keyword or in JUNK_COMPANY_NAMES
-                if cleaned_company.lower() not in [kw.replace('-', ' ') for kw in role_kws] and cleaned_company.lower() not in [jc.lower() for jc in JUNK_COMPANY_NAMES]:
+                # Also ensure it's not just a number or a single letter
+                if cleaned_company.lower() not in [kw.replace('-', ' ') for kw in role_kws] and \
+                   cleaned_company.lower() not in [jc.lower() for jc in JUNK_COMPANY_NAMES] and \
+                   not re.fullmatch(r'\d+', cleaned_company) and \
+                   len(cleaned_company) > 1:
                     return cleaned_company
             return "Unknown"
 
