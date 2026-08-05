@@ -1,20 +1,16 @@
 {
   "last_change": {
-    "ts": "2026-08-04T05:28:52Z",
+    "ts": "2026-08-05T05:28:10Z",
     "commits": [
-      "c5588bae1049f70b0eb59008ff93f0b7444dfc3d",
-      "f365b3c3023033d863e6ecc8d63740e456bb759a",
-      "b64f552c123235f1583a92a4fce96bfee322711c"
+      "1bc526b5e90f01c3457f893a7048cefab2ae4644"
     ],
     "metric": {
-      "quality_passed": 18,
+      "quality_passed": 19,
       "pm_current": 98,
       "fo_current": 16
     },
     "descriptions": [
-      "The `is_us_or_non_india_listing` function is too aggressive for the `parallel_search` source, which is intended to be a broad net. It's rejecting too many legitimate Indian jobs. This change relaxes the location check for `parallel_search` results, allowing more jobs to be ingested and then properly filtered by the enrichment step.",
-      "The `_extract_company_from_search_result` function's logic for splitting company slugs by role keywords is too aggressive. It can incorrectly truncate valid company names if a role keyword happens to be part of the company name or if the splitting logic is applied too broadly. This change refines the splitting logic to be more cautious, ensuring that only clear separators or role keywords at the end of a slug are used for splitting, and it also ensures that the cleaned company name is not a generic role keyword itself.",
-      "The enrichment query prioritizes PM jobs over strategy jobs even when the strategy board is significantly under target. This change adjusts the prioritization to give strategy jobs a higher priority when their board count is below the target (30), ensuring that the FO/CoS board can grow faster.",
+      "Relax the 'startup context guard' for 'strategic initiatives' titles. The current check for 'series a', 'series b', etc., might be too strict, especially for larger companies that still have legitimate strategic initiatives roles that fit the 'strategy' domain. Removing this guard allows more relevant roles to pass through, relying on other quality checks.",
       "config: add_queries"
     ]
   }
