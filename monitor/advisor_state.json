@@ -1,17 +1,3 @@
 {
-  "last_change": {
-    "ts": "2026-08-05T05:28:10Z",
-    "commits": [
-      "1bc526b5e90f01c3457f893a7048cefab2ae4644"
-    ],
-    "metric": {
-      "quality_passed": 19,
-      "pm_current": 98,
-      "fo_current": 16
-    },
-    "descriptions": [
-      "Relax the 'startup context guard' for 'strategic initiatives' titles. The current check for 'series a', 'series b', etc., might be too strict, especially for larger companies that still have legitimate strategic initiatives roles that fit the 'strategy' domain. Removing this guard allows more relevant roles to pass through, relying on other quality checks.",
-      "config: add_queries"
-    ]
-  }
+  "last_change": null
 }
