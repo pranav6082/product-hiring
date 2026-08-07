@@ -1,3 +1,17 @@
 {
-  "last_change": null
+  "last_change": {
+    "ts": "2026-08-07T04:35:20Z",
+    "commits": [
+      "7ac13553a3482734e8e12bb2b86feaa8efb58569"
+    ],
+    "metric": {
+      "quality_passed": 19,
+      "pm_current": 99,
+      "fo_current": 19
+    },
+    "descriptions": [
+      "Refine the `_extract_company_from_search_result` logic to be less aggressive in stripping potential company names that might contain role keywords, especially when the company slug is short. This should reduce 'Unknown' company names for valid listings.",
+      "config: add_queries"
+    ]
+  }
 }
