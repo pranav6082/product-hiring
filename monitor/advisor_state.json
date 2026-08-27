@@ -1,3 +1,16 @@
 {
-  "last_change": null
+  "last_change": {
+    "ts": "2026-08-27T12:58:08Z",
+    "commits": [
+      "74b6e58e818d28e44eadd3bbc82373ce8c20d0f0"
+    ],
+    "metric": {
+      "quality_passed": 19,
+      "pm_current": 127,
+      "fo_current": 25
+    },
+    "descriptions": [
+      "Adjust the job fetching priority to equally prioritize PM and Strategy jobs when both boards are below their respective targets. This ensures that FO/CoS jobs get enriched and approved more quickly, addressing the low conversion rate."
+    ]
+  }
 }
