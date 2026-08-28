@@ -1,16 +1,16 @@
 {
   "last_change": {
-    "ts": "2026-08-27T12:58:08Z",
+    "ts": "2026-08-28T14:28:59Z",
     "commits": [
-      "74b6e58e818d28e44eadd3bbc82373ce8c20d0f0"
+      "c898e1f1cd3da0445cbe67af4b711168e2f3e7b9"
     ],
     "metric": {
       "quality_passed": 19,
-      "pm_current": 127,
-      "fo_current": 25
+      "pm_current": 128,
+      "fo_current": 24
     },
     "descriptions": [
-      "Adjust the job fetching priority to equally prioritize PM and Strategy jobs when both boards are below their respective targets. This ensures that FO/CoS jobs get enriched and approved more quickly, addressing the low conversion rate."
+      "Adjust the job fetching priority in `fetch_dirty_jobs` to prioritize strategy jobs if their board is under target, similar to how PM jobs are prioritized. This ensures that FO/CoS roles get sufficient enrichment attention to improve their conversion rate."
     ]
   }
 }
