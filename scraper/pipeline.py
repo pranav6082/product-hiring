@@ -990,7 +990,7 @@ def _extract_company_from_search_result(result_title: str, url: str) -> str:
                     break
             # Then, if still long, try to split by role keywords, but only if they appear after a reasonable company name length.
             # Make this more conservative to avoid stripping valid company names.
-            if len(company_slug) > 12: # Only consider splitting by role keyword if company_slug is already somewhat long, increased threshold
+            if len(company_slug) > 8: # Only consider splitting by role keyword if company_slug is already somewhat long, increase threshold
                 for kw in role_kws_for_splitting:
                     # Only split if the keyword is at the end or followed by a clear separator
                     if company_slug.endswith(kw) or re.search(rf'{kw}[\W_]', company_slug):
