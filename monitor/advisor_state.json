@@ -1,18 +1,3 @@
 {
-  "last_change": {
-    "ts": "2026-08-29T09:15:14Z",
-    "commits": [
-      "e9f99ebc6d94888f12d468e6a5cc6de046daf101",
-      "7c3455024084ed47f78525e5cf19b0bc84cee2a1"
-    ],
-    "metric": {
-      "quality_passed": 20,
-      "pm_current": 130,
-      "fo_current": 24
-    },
-    "descriptions": [
-      "Adjust the `fetch_dirty_jobs` query to prioritize PM jobs first as per v0.1 spec, and then strategy jobs without an arbitrary approved count limit. This ensures PM jobs are always enriched first and strategy jobs are processed more consistently, regardless of their current approved count, preventing the low conversion rate for FO/CoS from being exacerbated by enrichment delays.",
-      "Refine the `_extract_company_from_search_result` function to be less aggressive in stripping company names, especially when they contain common role keywords. The current logic can incorrectly truncate valid company names. This change increases the `company_slug` length threshold before attempting to split by role keywords, reducing false positives for 'Unknown' companies."
-    ]
-  }
+  "last_change": null
 }
