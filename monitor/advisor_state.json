@@ -1,3 +1,18 @@
 {
-  "last_change": null
+  "last_change": {
+    "ts": "2026-08-31T08:47:35Z",
+    "commits": [
+      "f9c56d71bfd40d4be741d582110046cdce54a01a",
+      "68d85bcbc3528fb553b3eb33b5cc9cc918290a82"
+    ],
+    "metric": {
+      "quality_passed": 20,
+      "pm_current": 128,
+      "fo_current": 24
+    },
+    "descriptions": [
+      "The `fetch_dirty_jobs` function's `ORDER BY` clause incorrectly prioritizes PM jobs and limits strategy job enrichment based on the approved count. This prevents new FO/CoS jobs from being enriched once the target of 30 approved jobs is met, causing the 0% conversion rate. The fix removes the approved count condition for strategy jobs, allowing them to be enriched regardless of the current approved count, ensuring new FO/CoS jobs are processed.",
+      "The `fetch_dirty_jobs` function's `WHERE` clause includes `strategy` roles, which are out of scope for v0.1. This leads to unnecessary enrichment attempts for roles that will ultimately be rejected, wasting resources and contributing to the 0% FO/CoS conversion rate (as they are not PMs). The fix removes `strategy` from the `WHERE` clause, ensuring only PM roles are considered for enrichment, aligning with v0.1 scope."
+    ]
+  }
 }
