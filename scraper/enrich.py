@@ -70,7 +70,7 @@ def fetch_dirty_jobs(limit: int, force: bool = False):
                employment_type, description_summary,
                normalization_confidence, job_url
         FROM jobs
-        WHERE COALESCE(norm_function, domain) IN ('pm', 'strategy')
+        WHERE COALESCE(norm_function, domain) IN ('pm')
           AND job_url IS NOT NULL
           AND job_url NOT LIKE '%%linkedin.com/jobs%%'
           AND job_url NOT LIKE '%%indeed.com/viewjob%%'
