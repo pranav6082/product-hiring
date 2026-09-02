@@ -87,10 +87,11 @@ def fetch_dirty_jobs(limit: int, force: bool = False):
             ELSE 2
           END ASC,
           -- tier 2: Prioritize PM jobs first, as per v0.1 scope, then strategy jobs.
+          -- tier 2: Process PM and Strategy jobs equally for now to diagnose 0% FO conversion.
+          -- Re-introduce prioritization if PM backlog grows too large after FO diagnosis.
           CASE
-            WHEN COALESCE(norm_function, domain) = 'pm' THEN 1
-            WHEN COALESCE(norm_function, domain) = 'strategy' THEN 2
-            ELSE 3
+            WHEN COALESCE(norm_function, domain) IN ('pm', 'strategy') THEN 1
+            ELSE 2
           END ASC,
           -- tier 3: seniority (covers both PM and CoS/FO titles)
           CASE
