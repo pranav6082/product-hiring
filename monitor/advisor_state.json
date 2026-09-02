@@ -1,18 +1,16 @@
 {
   "last_change": {
-    "ts": "2026-09-01T07:55:02Z",
+    "ts": "2026-09-02T07:14:18Z",
     "commits": [
-      "776477680427b9f92cac553c7efdb1139e5f7c94",
-      "a38bbe30e4d1b5e2c6b55eb687b66297849a8514"
+      "b426c7dd3a1ba37f7fdbfbbdae484aa30e313c40"
     ],
     "metric": {
-      "quality_passed": 19,
-      "pm_current": 129,
+      "quality_passed": 20,
+      "pm_current": 131,
       "fo_current": 23
     },
     "descriptions": [
-      "Modify `fetch_dirty_jobs` to include 'strategy' domain jobs in the enrichment queue, as per the product spec's implicit need for these roles to be processed. The current `WHERE` clause explicitly excludes them, leading to 0% conversion.",
-      "Adjust the `ORDER BY` clause in `fetch_dirty_jobs` to prioritize 'strategy' jobs (FO/CoS) after PM jobs, ensuring they are processed for enrichment and approval, aligning with the goal of having them on the board in future versions."
+      "The SPEC.md v0.1 focuses on PM roles, but the current metrics show FO jobs are being ingested and then failing to convert. The `fetch_dirty_jobs` function explicitly prioritizes PM jobs over 'strategy' jobs, effectively starving the 'strategy' jobs from being enriched and approved. To diagnose the 0% conversion, we need to ensure 'strategy' jobs are processed for enrichment. This change removes the explicit prioritization of PM over strategy within the `fetch_dirty_jobs` query, allowing both domains to be processed more equally for enrichment, which is crucial for understanding why FO jobs are failing to convert."
     ]
   }
 }
