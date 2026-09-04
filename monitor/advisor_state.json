@@ -1,16 +1,16 @@
 {
   "last_change": {
-    "ts": "2026-09-03T07:18:04Z",
+    "ts": "2026-09-04T07:20:53Z",
     "commits": [
-      "8979cac4bdf1149f89ee237b1e7aebaac3d64fb8"
+      "78c0690803dc4bc4bb8782870b72c91d06fd6bc3"
     ],
     "metric": {
-      "quality_passed": 18,
-      "pm_current": 131,
-      "fo_current": 23
+      "quality_passed": 20,
+      "pm_current": 132,
+      "fo_current": 24
     },
     "descriptions": [
-      "Re-introduce prioritization for PM jobs over 'strategy' jobs in `fetch_dirty_jobs`. While the goal is to diagnose FO conversion, the current equal prioritization, combined with the previously broad 'strategy' classification, means the enrichment pipeline is spending too much time on low-quality FO jobs. Prioritizing PM jobs ensures the core v0.1 goal is met while we refine FO classification."
+      "Adjust the `fetch_dirty_jobs` query to prioritize 'pending' and 'unknown' strategy jobs equally with 'pending' and 'unknown' PM jobs. This ensures that strategy roles, which are currently suffering from a low conversion rate, get enriched in a timely manner, preventing them from being auto-rejected due to age."
     ]
   }
 }
