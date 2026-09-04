@@ -89,9 +89,11 @@ def fetch_dirty_jobs(limit: int, force: bool = False):
           -- tier 2: Prioritize PM jobs first, as per v0.1 scope, then strategy jobs.
           -- tier 2: Prioritize PM jobs first, as per v0.1 scope.
           CASE
-            WHEN COALESCE(norm_function, domain) = 'pm' THEN 1
-            WHEN COALESCE(norm_function, domain) = 'strategy' THEN 2
-            ELSE 3
+            WHEN review_status = 'pending' AND india_hiring = 'unknown' AND COALESCE(norm_function, domain) = 'pm' THEN 1
+            WHEN review_status = 'pending' AND india_hiring = 'unknown' AND COALESCE(norm_function, domain) = 'strategy' THEN 2
+            WHEN COALESCE(norm_function, domain) = 'pm' THEN 3
+            WHEN COALESCE(norm_function, domain) = 'strategy' THEN 4
+            ELSE 5
           END ASC,
           -- tier 3: seniority (covers both PM and CoS/FO titles)
           CASE
