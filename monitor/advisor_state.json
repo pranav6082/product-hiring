@@ -1,16 +1,3 @@
 {
-  "last_change": {
-    "ts": "2026-09-04T07:20:53Z",
-    "commits": [
-      "78c0690803dc4bc4bb8782870b72c91d06fd6bc3"
-    ],
-    "metric": {
-      "quality_passed": 20,
-      "pm_current": 132,
-      "fo_current": 24
-    },
-    "descriptions": [
-      "Adjust the `fetch_dirty_jobs` query to prioritize 'pending' and 'unknown' strategy jobs equally with 'pending' and 'unknown' PM jobs. This ensures that strategy roles, which are currently suffering from a low conversion rate, get enriched in a timely manner, preventing them from being auto-rejected due to age."
-    ]
-  }
+  "last_change": null
 }
