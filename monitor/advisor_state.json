@@ -1,3 +1,16 @@
 {
-  "last_change": null
+  "last_change": {
+    "ts": "2026-09-06T07:14:00Z",
+    "commits": [
+      "ec7b1c2e6bf404a70a1b1be8311ef6c1ba056cfa"
+    ],
+    "metric": {
+      "quality_passed": 20,
+      "pm_current": 133,
+      "fo_current": 26
+    },
+    "descriptions": [
+      "Adjust the `fetch_dirty_jobs` query to prioritize 'strategy' jobs equally with 'pm' jobs when they are in the 'pending' and 'unknown' state. This ensures that FO/CoS roles, which are currently underperforming in conversion, get processed faster."
+    ]
+  }
 }
